@@ -1,0 +1,103 @@
+\hypertarget{main_8cc}{}\doxysection{Referencia del Archivo main.\+cc}
+\label{main_8cc}\index{main.cc@{main.cc}}
+
+
+Programa principal para la práctica de PRO2\+: {\itshape Circuito de Torneos de Tenis}.  
+
+
+Dependencia gráfica adjunta para main.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{main_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Programa principal para la práctica de PRO2\+: {\itshape Circuito de Torneos de Tenis}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Programa principal para la práctica de PRO2\+: {\itshape Circuito de Torneos de Tenis}. 
+
+Como bien da a entender el enunciado, se supone que los datos leídos siempre son correctos, de modo que no se incluyen comprobaciones al respecto. 
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cc@{main.cc}!main@{main}}
+\index{main@{main}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Programa principal para la práctica de PRO2\+: {\itshape Circuito de Torneos de Tenis}. 
+
+
+
+Definición en la línea 34 del archivo main.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36   \mbox{\hyperlink{class_cjt__categorias}{Cjt\_categorias}} c;}
+\DoxyCodeLine{37   \mbox{\hyperlink{class_cjt__torneos}{Cjt\_torneos}} t;}
+\DoxyCodeLine{38   \mbox{\hyperlink{class_cjt__jugadores}{Cjt\_jugadores}} j;}
+\DoxyCodeLine{39   }
+\DoxyCodeLine{40   c.\mbox{\hyperlink{class_cjt__categorias_a52875c449fbd2b52ec82e957a12dba63}{lectura\_inicial}}();}
+\DoxyCodeLine{41   t.\mbox{\hyperlink{class_cjt__torneos_a922d956d2644c4a43f2bf6a28c1ff1f2}{lectura\_inicial}}();}
+\DoxyCodeLine{42   j.\mbox{\hyperlink{class_cjt__jugadores_abedd09a503847f179a90a91b6e4186d8}{lectura\_inicial}}();}
+\DoxyCodeLine{43   }
+\DoxyCodeLine{44   \textcolor{keywordtype}{string} cm;}
+\DoxyCodeLine{45   cin >> cm;}
+\DoxyCodeLine{46   \textcolor{keywordflow}{while} (cm != \textcolor{stringliteral}{"{}fin"{}}) \{}
+\DoxyCodeLine{47     \textcolor{keywordtype}{string} p;}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}nuevo\_jugador"{}} or cm == \textcolor{stringliteral}{"{}nj"{}}) \{}
+\DoxyCodeLine{49       cin >> p;}
+\DoxyCodeLine{50       \textcolor{keywordflow}{if} (not j.\mbox{\hyperlink{class_cjt__jugadores_a2e1c4849dfa5c02c45abee38ec192602}{nuevo\_jugador}}(p)) cout << \textcolor{stringliteral}{"{}error: ya existe un jugador con ese nombre"{}} << endl;}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}nuevo\_torneo"{}} or cm == \textcolor{stringliteral}{"{}nt"{}}) \{}
+\DoxyCodeLine{53       \textcolor{keywordtype}{int} cat;}
+\DoxyCodeLine{54       cin >> p >> cat;}
+\DoxyCodeLine{55       \textcolor{keywordflow}{if} (not c.\mbox{\hyperlink{class_cjt__categorias_a42303b0a7dacb4dc347c5096138d7dd4}{existe\_categoria}}(cat)) cout << \textcolor{stringliteral}{"{}error: la categoria no existe"{}} << endl;}
+\DoxyCodeLine{56       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (not t.\mbox{\hyperlink{class_cjt__torneos_ab00b32ad2d1d79dc9fce6e5fccb43598}{nuevo\_torneo}}(p, cat)) cout << \textcolor{stringliteral}{"{}error: ya existe un torneo con ese nombre"{}} << endl;}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}baja\_jugador"{}} or cm == \textcolor{stringliteral}{"{}bj"{}}) \{}
+\DoxyCodeLine{59       cin >> p;}
+\DoxyCodeLine{60       \textcolor{keywordflow}{if} (not j.\mbox{\hyperlink{class_cjt__jugadores_a941689541c585199d898b0775d354cd2}{baja\_jugador}}(p)) cout << \textcolor{stringliteral}{"{}error: el jugador no existe"{}} << endl;}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}baja\_torneo"{}} or cm == \textcolor{stringliteral}{"{}bt"{}}) \{}
+\DoxyCodeLine{63       cin >> p;}
+\DoxyCodeLine{64       \textcolor{keywordflow}{if} (not t.\mbox{\hyperlink{class_cjt__torneos_a3530fd7f896f206868f810b54555a83d}{baja\_torneo}}(p, j)) cout << \textcolor{stringliteral}{"{}error: el torneo no existe"{}} << endl;}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}iniciar\_torneo"{}} or cm == \textcolor{stringliteral}{"{}it"{}}) \{}
+\DoxyCodeLine{67       cin >> p;}
+\DoxyCodeLine{68       t.\mbox{\hyperlink{class_cjt__torneos_af3a95aab59757c13c364794bab06ba7f}{iniciar\_torneo}}(p, j);}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}finalizar\_torneo"{}} or cm == \textcolor{stringliteral}{"{}ft"{}}) \{}
+\DoxyCodeLine{71       cin >> p;}
+\DoxyCodeLine{72       t.\mbox{\hyperlink{class_cjt__torneos_afec461dcfb4287090f4f28212decc92f}{finalizar\_torneo}}(p, j);}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}listar\_ranking"{}} or cm == \textcolor{stringliteral}{"{}lr"{}}) \{}
+\DoxyCodeLine{75       j.\mbox{\hyperlink{class_cjt__jugadores_a965f2c0d40253c9989053d78bf026390}{listar\_ranking}}();}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}listar\_jugadores"{}} or cm == \textcolor{stringliteral}{"{}lj"{}}) \{}
+\DoxyCodeLine{78       j.\mbox{\hyperlink{class_cjt__jugadores_a24317852ef9a837ea9f1ea0d58597147}{listar\_jugadores}}();}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}consultar\_jugador"{}} or cm == \textcolor{stringliteral}{"{}cj"{}}) \{}
+\DoxyCodeLine{81       cin >> p;}
+\DoxyCodeLine{82       \textcolor{keywordflow}{if} (not j.\mbox{\hyperlink{class_cjt__jugadores_ab01e3d27d07fcd19c67f23e861feb650}{consultar\_jugador}}(p)) cout << \textcolor{stringliteral}{"{}error: el jugador no existe"{}} << endl;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}listar\_torneos"{}} or cm == \textcolor{stringliteral}{"{}lt"{}}) \{}
+\DoxyCodeLine{85       t.\mbox{\hyperlink{class_cjt__torneos_ac7b5c917be5ba8e02f6d8f6efd6ae5e1}{listar\_torneos}}(c);}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cm == \textcolor{stringliteral}{"{}listar\_categorias"{}} or cm == \textcolor{stringliteral}{"{}lc"{}}) \{}
+\DoxyCodeLine{88       c.\mbox{\hyperlink{class_cjt__categorias_af46e714ce19151568983bd3dc26ee0a9}{listar\_categorias}}();}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     cin >> cm;}
+\DoxyCodeLine{91   \}}
+\DoxyCodeLine{92 \}}
+
+\end{DoxyCode}

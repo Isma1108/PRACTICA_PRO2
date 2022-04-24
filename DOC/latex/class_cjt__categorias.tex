@@ -1,0 +1,230 @@
+\hypertarget{class_cjt__categorias}{}\doxysection{Referencia de la Clase Cjt\+\_\+categorias}
+\label{class_cjt__categorias}\index{Cjt\_categorias@{Cjt\_categorias}}
+
+
+Facilita la gestión de un conjunto de categorias. (obj. \textquotesingle{}\mbox{\hyperlink{struct_categoria}{Categoria}}\textquotesingle{})  
+
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cjt__categorias_acb1bba449ac618047f1ac5f9f7756ec1}{Cjt\+\_\+categorias}} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cjt__categorias_a42303b0a7dacb4dc347c5096138d7dd4}{existe\+\_\+categoria}} (int c) const
+\begin{DoxyCompactList}\small\item\em Consultora que permite saber si existe una categoria en el conjunto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cjt__categorias_ae4bed711184d0ba25d5491c501285c32}{puntos\+\_\+categoria}} (int c, int k) const
+\begin{DoxyCompactList}\small\item\em Consultora que permite saber los puntos que debe un jugador que ha participado en un torneo de categoria {\itshape c} y que ha llegado a un nivel {\itshape k}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_cjt__categorias_a59ab5f1952d735120cc49acd595d9217}{consultar\+\_\+nombre}} (int c) const
+\item 
+void \mbox{\hyperlink{class_cjt__categorias_af46e714ce19151568983bd3dc26ee0a9}{listar\+\_\+categorias}} () const
+\begin{DoxyCompactList}\small\item\em Operación de escritura. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cjt__categorias_a52875c449fbd2b52ec82e957a12dba63}{lectura\+\_\+inicial}} ()
+\begin{DoxyCompactList}\small\item\em Método que se encarga de inicializar los datos del conjunto, dados unos datos por el canal standard de entrada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_categoria}{Categoria}} $>$ \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}
+\item 
+int \mbox{\hyperlink{class_cjt__categorias_a637bdc6c17384e2e8ba98ac4951a2449}{K}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Facilita la gestión de un conjunto de categorias. (obj. \textquotesingle{}\mbox{\hyperlink{struct_categoria}{Categoria}}\textquotesingle{}) 
+
+La clase tiene el propósito de gestionar un conjunto de categorias. Ésta permite 
+
+Definición en la línea 38 del archivo Cjt\+\_\+categorias.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_cjt__categorias_acb1bba449ac618047f1ac5f9f7756ec1}\label{class_cjt__categorias_acb1bba449ac618047f1ac5f9f7756ec1}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!Cjt\_categorias@{Cjt\_categorias}}
+\index{Cjt\_categorias@{Cjt\_categorias}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{Cjt\_categorias()}{Cjt\_categorias()}}
+{\footnotesize\ttfamily Cjt\+\_\+categorias\+::\+Cjt\+\_\+categorias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un \mbox{\hyperlink{class_cjt__categorias}{Cjt\+\_\+categorias}} con su vector de \mbox{\hyperlink{struct_categoria}{Categoria}} no definido. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 3 del archivo Cjt\+\_\+categorias.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_cjt__categorias_a42303b0a7dacb4dc347c5096138d7dd4}\label{class_cjt__categorias_a42303b0a7dacb4dc347c5096138d7dd4}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!existe\_categoria@{existe\_categoria}}
+\index{existe\_categoria@{existe\_categoria}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{existe\_categoria()}{existe\_categoria()}}
+{\footnotesize\ttfamily bool Cjt\+\_\+categorias\+::existe\+\_\+categoria (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Consultora que permite saber si existe una categoria en el conjunto. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape c} es un entero 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se devuelve true si existe una categoria con identificador {\itshape c} en el conjunto, false en caso contrario. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 5 del archivo Cjt\+\_\+categorias.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5                                                  \{}
+\DoxyCodeLine{6     \textcolor{keywordflow}{if} (c >= 1 and c <= \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}.size()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{7     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{8 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__categorias_ae4bed711184d0ba25d5491c501285c32}\label{class_cjt__categorias_ae4bed711184d0ba25d5491c501285c32}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!puntos\_categoria@{puntos\_categoria}}
+\index{puntos\_categoria@{puntos\_categoria}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{puntos\_categoria()}{puntos\_categoria()}}
+{\footnotesize\ttfamily int Cjt\+\_\+categorias\+::puntos\+\_\+categoria (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{int}]{k }\end{DoxyParamCaption}) const}
+
+
+
+Consultora que permite saber los puntos que debe un jugador que ha participado en un torneo de categoria {\itshape c} y que ha llegado a un nivel {\itshape k}. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape c} es un identificador de una categoria existente en el conjunto y {\itshape k} es un nivel $>$= 1 y $<$= K. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+se devuelve un entero que representa los puntos que debe ganar un jugador que ha llegado a un nivel {\itshape k} en un torneo de categoria {\itshape c}. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_cjt__categorias_a59ab5f1952d735120cc49acd595d9217}\label{class_cjt__categorias_a59ab5f1952d735120cc49acd595d9217}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!consultar\_nombre@{consultar\_nombre}}
+\index{consultar\_nombre@{consultar\_nombre}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{consultar\_nombre()}{consultar\_nombre()}}
+{\footnotesize\ttfamily string Cjt\+\_\+categorias\+::consultar\+\_\+nombre (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Definición en la línea 12 del archivo Cjt\+\_\+categorias.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                                                    \{}
+\DoxyCodeLine{13     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}[c-\/1].nombre;}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__categorias_af46e714ce19151568983bd3dc26ee0a9}\label{class_cjt__categorias_af46e714ce19151568983bd3dc26ee0a9}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!listar\_categorias@{listar\_categorias}}
+\index{listar\_categorias@{listar\_categorias}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{listar\_categorias()}{listar\_categorias()}}
+{\footnotesize\ttfamily void Cjt\+\_\+categorias\+::listar\+\_\+categorias (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Operación de escritura. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Se ha listado en el canal standard de salida, por orden creciente de identificador, el nombre y la tabla de puntos por niveles (en orden creciente de nivel) de cada categoria del conjunto. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 16 del archivo Cjt\+\_\+categorias.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                              \{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} n = \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}.size();}
+\DoxyCodeLine{18     cout << n << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_cjt__categorias_a637bdc6c17384e2e8ba98ac4951a2449}{K}} << endl; }
+\DoxyCodeLine{19     }
+\DoxyCodeLine{20     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; ++i) \{}
+\DoxyCodeLine{21         cout << \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}[i].nombre;}
+\DoxyCodeLine{22         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_cjt__categorias_a637bdc6c17384e2e8ba98ac4951a2449}{K}}; ++j) cout << \textcolor{charliteral}{' '} << \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}[i].puntuacion\_por\_nivel[j];}
+\DoxyCodeLine{23         cout << endl;}
+\DoxyCodeLine{24     \}}
+\DoxyCodeLine{25 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__categorias_a52875c449fbd2b52ec82e957a12dba63}\label{class_cjt__categorias_a52875c449fbd2b52ec82e957a12dba63}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!lectura\_inicial@{lectura\_inicial}}
+\index{lectura\_inicial@{lectura\_inicial}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{lectura\_inicial()}{lectura\_inicial()}}
+{\footnotesize\ttfamily void Cjt\+\_\+categorias\+::lectura\+\_\+inicial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Método que se encarga de inicializar los datos del conjunto, dados unos datos por el canal standard de entrada. 
+
+\begin{DoxyPrecond}{Precondición}
+Está disponible en el canal standard de entrada un número de categorias C $>$= 0 seguido de un número máximo de niveles K $>$= 4. Después hay una secuencia de C strings con los nombres asociados a las categorías identificadas por los valores entre 1 y C en orden creciente (de identificador, no de nombre). Luego hay disponibles C × K enteros mayores o iguales que 0, que serán los puntos por categoría y nivel, ordenados crecientemente por categorías y dentro de cada categoría ordenados crecientemente por nivel. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El parámetro implícito ha sido modificado de forma que se han almacenado todas las categorias con su correspondiente información. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 27 del archivo Cjt\+\_\+categorias.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27                                      \{}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} c, k;}
+\DoxyCodeLine{29     cin >> c >> k;}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_cjt__categorias_a637bdc6c17384e2e8ba98ac4951a2449}{K}} = k;}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}} = vector<Categoria>(c);}
+\DoxyCodeLine{32     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < c; ++i) cin >> \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}[i].nombre;}
+\DoxyCodeLine{33     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < c; ++i) \{}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}[i].puntuacion\_por\_nivel = vector<int>(k);}
+\DoxyCodeLine{35         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < k; ++j) \{}
+\DoxyCodeLine{36             cin >> \mbox{\hyperlink{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}{categorias}}[i].puntuacion\_por\_nivel[j];}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}\label{class_cjt__categorias_a349e879e33601152820d8b5f20fd7c3e}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!categorias@{categorias}}
+\index{categorias@{categorias}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{categorias}{categorias}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{struct_categoria}{Categoria}}$>$ Cjt\+\_\+categorias\+::categorias\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 41 del archivo Cjt\+\_\+categorias.\+hh.
+
+\mbox{\Hypertarget{class_cjt__categorias_a637bdc6c17384e2e8ba98ac4951a2449}\label{class_cjt__categorias_a637bdc6c17384e2e8ba98ac4951a2449}} 
+\index{Cjt\_categorias@{Cjt\_categorias}!K@{K}}
+\index{K@{K}!Cjt\_categorias@{Cjt\_categorias}}
+\doxysubsubsection{\texorpdfstring{K}{K}}
+{\footnotesize\ttfamily int Cjt\+\_\+categorias\+::K\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definición en la línea 42 del archivo Cjt\+\_\+categorias.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_cjt__categorias_8hh}{Cjt\+\_\+categorias.\+hh}}\item 
+\mbox{\hyperlink{_cjt__categorias_8cc}{Cjt\+\_\+categorias.\+cc}}\end{DoxyCompactItemize}

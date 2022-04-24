@@ -1,0 +1,8 @@
+<map id="main.cc" name="main.cc">
+<area shape="rect" id="node1" title="Programa principal para la práctica de PRO2: Circuito de Torneos de Tenis." alt="" coords="109,5,175,32"/>
+<area shape="rect" id="node2" href="$_cjt__categorias_8hh.html" title="Especificacion de la clase Cjt_categorias." alt="" coords="158,229,281,256"/>
+<area shape="rect" id="node3" href="$_cjt__jugadores_8hh.html" title="Especificación de la clase Cjt_jugadores." alt="" coords="5,229,124,256"/>
+<area shape="rect" id="node5" href="$_cjt__torneos_8hh.html" title="Especificación de la clase Cjt_torneos." alt="" coords="89,80,195,107"/>
+<area shape="rect" id="node4" href="$_jugador_8hh.html" title="Especificación de la clase Jugador." alt="" coords="22,304,107,331"/>
+<area shape="rect" id="node6" href="$_torneo_8hh.html" title="Especificación de la clase Torneo." alt="" coords="103,155,181,181"/>
+</map>

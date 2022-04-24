@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Práctica PRO2: Circuito de torneos de tenis: Fichero Fuente Jugador.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Práctica PRO2: Circuito de torneos de tenis
+   &#160;<span id="projectnumber">Autor: Ismael El Basli</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Jugador.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_jugador_8hh.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef JUGADOR_HH</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define JUGADOR_HH</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="_jugador_8hh.html#adb85a67b1bcddda854b735e59898548c">   17</a></span>&#160;<span class="keyword">typedef</span> pair&lt;int,int&gt; <a class="code" href="_jugador_8hh.html#adb85a67b1bcddda854b735e59898548c">Estadisticas</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_jugador.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_jugador.html">Jugador</a> </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//no es necesario guardar el nombre del jugador como atributo</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">//ya que el map de jugadores tiene como clave ese nombre</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_jugador.html#a1fb5771e4831c35b18cdc2ddf6dac2fc">   31</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a1fb5771e4831c35b18cdc2ddf6dac2fc">torneos_disputados</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_jugador.html#a0c0f3be497388acec0e2c890dcd46850">   32</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a0c0f3be497388acec0e2c890dcd46850">posicion</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_jugador.html#a4e264d857d5a3f1a68cbb13e4b88930f">   33</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a4e264d857d5a3f1a68cbb13e4b88930f">puntos</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_jugador.html#ac2d39ed20334dc492ec4aa334ecc2d9a">   34</a></span>&#160;  <a class="code" href="_jugador_8hh.html#adb85a67b1bcddda854b735e59898548c">Estadisticas</a> <a class="code" href="class_jugador.html#ac2d39ed20334dc492ec4aa334ecc2d9a">partidos</a>; <span class="comment">//Par de partidos ganados y perdidos</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_jugador.html#a22ac6ce9ef9d51412b417551a74469f7">   35</a></span>&#160;  <a class="code" href="_jugador_8hh.html#adb85a67b1bcddda854b735e59898548c">Estadisticas</a> <a class="code" href="class_jugador.html#a22ac6ce9ef9d51412b417551a74469f7">sets</a>; <span class="comment">//Par de sets ganados y perdidos</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_jugador.html#a706a3316a9d570aebcc5e47da015f8d9">   36</a></span>&#160;  <a class="code" href="_jugador_8hh.html#adb85a67b1bcddda854b735e59898548c">Estadisticas</a> <a class="code" href="class_jugador.html#a706a3316a9d570aebcc5e47da015f8d9">juegos</a>; <span class="comment">//Par de juegos ganados y perdidos</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="comment">//Constructoras</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="class_jugador.html">Jugador</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="class_jugador.html">Jugador</a>(<span class="keywordtype">int</span> p);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">//Modificadoras</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_jugador.html#a6a9a77cfb05acb373b27e28b6a2d9d03">   63</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_jugador.html#a6a9a77cfb05acb373b27e28b6a2d9d03">modificar_partidos</a>(<span class="keywordtype">int</span> g, <span class="keywordtype">int</span> p);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_jugador.html#a7428490d3b12e7614dbbefcd56874c18">   70</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_jugador.html#a7428490d3b12e7614dbbefcd56874c18">modificar_sets</a>(<span class="keywordtype">int</span> g, <span class="keywordtype">int</span> p);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="class_jugador.html#acef71d1279da622a3b4037c8c3713ede">   77</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_jugador.html#acef71d1279da622a3b4037c8c3713ede">modificar_juegos</a>(<span class="keywordtype">int</span> g, <span class="keywordtype">int</span> p);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_jugador.html#a4041e0e48b1769863558ddaa9fc5d2f9">   84</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_jugador.html#a4041e0e48b1769863558ddaa9fc5d2f9">nuevo_td</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_jugador.html#afd0b8f174b664ff5886970415833ab07">   90</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_jugador.html#afd0b8f174b664ff5886970415833ab07">modificar_puntos</a>(<span class="keywordtype">int</span> p);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordtype">void</span> modificar_posicion(<span class="keywordtype">int</span> p);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">//Consultoras</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_jugador.html#a8bacaf099af160c847a6c2de909b1dbd">  104</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a8bacaf099af160c847a6c2de909b1dbd">consultar_td</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_jugador.html#a145e26e19398860451aa96a11af550f1">  111</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a145e26e19398860451aa96a11af550f1">consultar_pg</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_jugador.html#aab84ad9054c5ea725b6dd2bb20edc616">  117</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#aab84ad9054c5ea725b6dd2bb20edc616">consultar_pp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_jugador.html#a9392256509cf566800a2be5360e37027">  123</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a9392256509cf566800a2be5360e37027">consultar_sg</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_jugador.html#af4a66a7737d3bfbf5a01a0964bacd4f6">  129</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#af4a66a7737d3bfbf5a01a0964bacd4f6">consultar_sp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_jugador.html#a397ef40ece8d51411f2711076198bcb6">  135</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#a397ef40ece8d51411f2711076198bcb6">consultar_jg</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_jugador.html#aefc14b54e6776fba99403365df44f965">  141</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_jugador.html#aefc14b54e6776fba99403365df44f965">consultar_jp</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keywordtype">int</span> consultar_pos() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordtype">int</span> consultar_puntos() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">//Escritura del jugador </span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordtype">void</span> escribir() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;};</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_jugador_8hh_html_adb85a67b1bcddda854b735e59898548c"><div class="ttname"><a href="_jugador_8hh.html#adb85a67b1bcddda854b735e59898548c">Estadisticas</a></div><div class="ttdeci">pair&lt; int, int &gt; Estadisticas</div><div class="ttdoc">Pair que identifica las estadisticas de partidos y sets. (ganados-perdidos)</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00017">Jugador.hh:17</a></div></div>
+<div class="ttc" id="aclass_jugador_html"><div class="ttname"><a href="class_jugador.html">Jugador</a></div><div class="ttdoc">Representa un jugador del circuito de torneos de tenis.</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00026">Jugador.hh:27</a></div></div>
+<div class="ttc" id="aclass_jugador_html_a0c0f3be497388acec0e2c890dcd46850"><div class="ttname"><a href="class_jugador.html#a0c0f3be497388acec0e2c890dcd46850">Jugador::posicion</a></div><div class="ttdeci">int posicion</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00032">Jugador.hh:32</a></div></div>
+<div class="ttc" id="aclass_jugador_html_a145e26e19398860451aa96a11af550f1"><div class="ttname"><a href="class_jugador.html#a145e26e19398860451aa96a11af550f1">Jugador::consultar_pg</a></div><div class="ttdeci">int consultar_pg() const</div><div class="ttdoc">Consultora del número de partidos ganados.</div></div>
+<div class="ttc" id="aclass_jugador_html_a1fb5771e4831c35b18cdc2ddf6dac2fc"><div class="ttname"><a href="class_jugador.html#a1fb5771e4831c35b18cdc2ddf6dac2fc">Jugador::torneos_disputados</a></div><div class="ttdeci">int torneos_disputados</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00031">Jugador.hh:31</a></div></div>
+<div class="ttc" id="aclass_jugador_html_a22ac6ce9ef9d51412b417551a74469f7"><div class="ttname"><a href="class_jugador.html#a22ac6ce9ef9d51412b417551a74469f7">Jugador::sets</a></div><div class="ttdeci">Estadisticas sets</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00035">Jugador.hh:35</a></div></div>
+<div class="ttc" id="aclass_jugador_html_a397ef40ece8d51411f2711076198bcb6"><div class="ttname"><a href="class_jugador.html#a397ef40ece8d51411f2711076198bcb6">Jugador::consultar_jg</a></div><div class="ttdeci">int consultar_jg() const</div><div class="ttdoc">Consultora del número de juegos ganados.</div></div>
+<div class="ttc" id="aclass_jugador_html_a4041e0e48b1769863558ddaa9fc5d2f9"><div class="ttname"><a href="class_jugador.html#a4041e0e48b1769863558ddaa9fc5d2f9">Jugador::nuevo_td</a></div><div class="ttdeci">void nuevo_td()</div><div class="ttdoc">Modificadora del número de torneos disputados.</div></div>
+<div class="ttc" id="aclass_jugador_html_a4e264d857d5a3f1a68cbb13e4b88930f"><div class="ttname"><a href="class_jugador.html#a4e264d857d5a3f1a68cbb13e4b88930f">Jugador::puntos</a></div><div class="ttdeci">int puntos</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00033">Jugador.hh:33</a></div></div>
+<div class="ttc" id="aclass_jugador_html_a6a9a77cfb05acb373b27e28b6a2d9d03"><div class="ttname"><a href="class_jugador.html#a6a9a77cfb05acb373b27e28b6a2d9d03">Jugador::modificar_partidos</a></div><div class="ttdeci">void modificar_partidos(int g, int p)</div><div class="ttdoc">Modificadora del par que almacena la información de los partidos ganados/perdidos.</div></div>
+<div class="ttc" id="aclass_jugador_html_a706a3316a9d570aebcc5e47da015f8d9"><div class="ttname"><a href="class_jugador.html#a706a3316a9d570aebcc5e47da015f8d9">Jugador::juegos</a></div><div class="ttdeci">Estadisticas juegos</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00036">Jugador.hh:36</a></div></div>
+<div class="ttc" id="aclass_jugador_html_a7428490d3b12e7614dbbefcd56874c18"><div class="ttname"><a href="class_jugador.html#a7428490d3b12e7614dbbefcd56874c18">Jugador::modificar_sets</a></div><div class="ttdeci">void modificar_sets(int g, int p)</div><div class="ttdoc">Modificadora del par que almacena la información de los sets ganados/perdidos.</div></div>
+<div class="ttc" id="aclass_jugador_html_a8bacaf099af160c847a6c2de909b1dbd"><div class="ttname"><a href="class_jugador.html#a8bacaf099af160c847a6c2de909b1dbd">Jugador::consultar_td</a></div><div class="ttdeci">int consultar_td() const</div><div class="ttdoc">Consultora del número de torneos disputados.</div></div>
+<div class="ttc" id="aclass_jugador_html_a9392256509cf566800a2be5360e37027"><div class="ttname"><a href="class_jugador.html#a9392256509cf566800a2be5360e37027">Jugador::consultar_sg</a></div><div class="ttdeci">int consultar_sg() const</div><div class="ttdoc">Consultora del número de sets ganados.</div></div>
+<div class="ttc" id="aclass_jugador_html_aab84ad9054c5ea725b6dd2bb20edc616"><div class="ttname"><a href="class_jugador.html#aab84ad9054c5ea725b6dd2bb20edc616">Jugador::consultar_pp</a></div><div class="ttdeci">int consultar_pp() const</div><div class="ttdoc">Consultora del número de partidos perdidos.</div></div>
+<div class="ttc" id="aclass_jugador_html_ac2d39ed20334dc492ec4aa334ecc2d9a"><div class="ttname"><a href="class_jugador.html#ac2d39ed20334dc492ec4aa334ecc2d9a">Jugador::partidos</a></div><div class="ttdeci">Estadisticas partidos</div><div class="ttdef"><b>Definition:</b> <a href="_jugador_8hh_source.html#l00034">Jugador.hh:34</a></div></div>
+<div class="ttc" id="aclass_jugador_html_acef71d1279da622a3b4037c8c3713ede"><div class="ttname"><a href="class_jugador.html#acef71d1279da622a3b4037c8c3713ede">Jugador::modificar_juegos</a></div><div class="ttdeci">void modificar_juegos(int g, int p)</div><div class="ttdoc">Modificadora del par que almacena la información de los juegos ganados/perdidos.</div></div>
+<div class="ttc" id="aclass_jugador_html_aefc14b54e6776fba99403365df44f965"><div class="ttname"><a href="class_jugador.html#aefc14b54e6776fba99403365df44f965">Jugador::consultar_jp</a></div><div class="ttdeci">int consultar_jp() const</div><div class="ttdoc">Consultora del número de juegos perdidos.</div></div>
+<div class="ttc" id="aclass_jugador_html_af4a66a7737d3bfbf5a01a0964bacd4f6"><div class="ttname"><a href="class_jugador.html#af4a66a7737d3bfbf5a01a0964bacd4f6">Jugador::consultar_sp</a></div><div class="ttdeci">int consultar_sp() const</div><div class="ttdoc">Consultora del número de sets perdidos.</div></div>
+<div class="ttc" id="aclass_jugador_html_afd0b8f174b664ff5886970415833ab07"><div class="ttname"><a href="class_jugador.html#afd0b8f174b664ff5886970415833ab07">Jugador::modificar_puntos</a></div><div class="ttdeci">void modificar_puntos(int p)</div><div class="ttdoc">Modificadora de los puntos del jugador.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

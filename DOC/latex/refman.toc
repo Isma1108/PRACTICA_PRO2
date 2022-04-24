@@ -1,0 +1,117 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {spanish}{}
+\contentsline {chapter}{\numberline {1}Circuito de Torneos de Tenis.}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Índice de clases}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Lista de clases}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Indice de archivos}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Lista de archivos}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Documentación de las clases}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Referencia de la Estructura Categoria}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Descripción detallada}{7}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Documentación de los datos miembro}{7}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}nombre}{7}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}puntuacion\_por\_nivel}{8}{subsubsection.4.1.2.2}%
+\contentsline {section}{\numberline {4.2}Referencia de la Clase Cjt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}categorias}{8}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Descripción detallada}{8}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Documentación del constructor y destructor}{9}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Cjt\_categorias()}{9}{subsubsection.4.2.2.1}%
+\contentsline {subsection}{\numberline {4.2.3}Documentación de las funciones miembro}{9}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}existe\_categoria()}{9}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}puntos\_categoria()}{9}{subsubsection.4.2.3.2}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}listar\_categorias()}{10}{subsubsection.4.2.3.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}lectura\_inicial()}{10}{subsubsection.4.2.3.4}%
+\contentsline {subsection}{\numberline {4.2.4}Documentación de los datos miembro}{10}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}categorias}{10}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}K}{11}{subsubsection.4.2.4.2}%
+\contentsline {section}{\numberline {4.3}Referencia de la Clase Cjt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}jugadores}{11}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Descripción detallada}{12}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Documentación del constructor y destructor}{12}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Cjt\_jugadores()}{12}{subsubsection.4.3.2.1}%
+\contentsline {subsection}{\numberline {4.3.3}Documentación de las funciones miembro}{12}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}nuevo\_jugador()}{12}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}baja\_jugador()}{13}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}restar\_puntos()}{13}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}actualizar\_ranking()}{13}{subsubsection.4.3.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.3.5}existe\_jugador()}{14}{subsubsection.4.3.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.3.6}listar\_ranking()}{14}{subsubsection.4.3.3.6}%
+\contentsline {subsubsection}{\numberline {4.3.3.7}listar\_jugadores()}{14}{subsubsection.4.3.3.7}%
+\contentsline {subsubsection}{\numberline {4.3.3.8}consultar\_jugador()}{15}{subsubsection.4.3.3.8}%
+\contentsline {subsubsection}{\numberline {4.3.3.9}lectura\_inicial()}{15}{subsubsection.4.3.3.9}%
+\contentsline {subsection}{\numberline {4.3.4}Documentación de los datos miembro}{15}{subsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.4.1}P}{15}{subsubsection.4.3.4.1}%
+\contentsline {subsubsection}{\numberline {4.3.4.2}jugadores}{16}{subsubsection.4.3.4.2}%
+\contentsline {subsubsection}{\numberline {4.3.4.3}ranking}{16}{subsubsection.4.3.4.3}%
+\contentsline {section}{\numberline {4.4}Referencia de la Clase Cjt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}torneos}{16}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Descripción detallada}{17}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Documentación del constructor y destructor}{17}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}Cjt\_torneos()}{17}{subsubsection.4.4.2.1}%
+\contentsline {subsection}{\numberline {4.4.3}Documentación de las funciones miembro}{17}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}nuevo\_torneo()}{17}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}baja\_torneo()}{18}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}iniciar\_torneo()}{18}{subsubsection.4.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}finalizar\_torneo()}{18}{subsubsection.4.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.4.3.5}existe\_torneo()}{19}{subsubsection.4.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.4.3.6}listar\_torneos()}{19}{subsubsection.4.4.3.6}%
+\contentsline {subsubsection}{\numberline {4.4.3.7}lectura\_inicial()}{19}{subsubsection.4.4.3.7}%
+\contentsline {subsection}{\numberline {4.4.4}Documentación de los datos miembro}{20}{subsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.1}T}{20}{subsubsection.4.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.4.2}torneos}{20}{subsubsection.4.4.4.2}%
+\contentsline {section}{\numberline {4.5}Referencia de la Clase Jugador}{20}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Descripción detallada}{21}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Documentación del constructor y destructor}{21}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}Jugador()}{21}{subsubsection.4.5.2.1}%
+\contentsline {subsection}{\numberline {4.5.3}Documentación de las funciones miembro}{21}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}modificar\_partidos()}{22}{subsubsection.4.5.3.1}%
+\contentsline {subsubsection}{\numberline {4.5.3.2}modificar\_sets()}{22}{subsubsection.4.5.3.2}%
+\contentsline {subsubsection}{\numberline {4.5.3.3}afegir\_td()}{22}{subsubsection.4.5.3.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.4}modificar\_puntos()}{23}{subsubsection.4.5.3.4}%
+\contentsline {subsubsection}{\numberline {4.5.3.5}modificar\_posicion()}{23}{subsubsection.4.5.3.5}%
+\contentsline {subsubsection}{\numberline {4.5.3.6}consultar\_td()}{23}{subsubsection.4.5.3.6}%
+\contentsline {subsubsection}{\numberline {4.5.3.7}consultar\_pg()}{24}{subsubsection.4.5.3.7}%
+\contentsline {subsubsection}{\numberline {4.5.3.8}consultar\_pp()}{24}{subsubsection.4.5.3.8}%
+\contentsline {subsubsection}{\numberline {4.5.3.9}consultar\_sg()}{24}{subsubsection.4.5.3.9}%
+\contentsline {subsubsection}{\numberline {4.5.3.10}consultar\_sp()}{25}{subsubsection.4.5.3.10}%
+\contentsline {subsubsection}{\numberline {4.5.3.11}consultar\_pos()}{25}{subsubsection.4.5.3.11}%
+\contentsline {subsubsection}{\numberline {4.5.3.12}consultar\_puntos()}{25}{subsubsection.4.5.3.12}%
+\contentsline {subsubsection}{\numberline {4.5.3.13}escribir()}{26}{subsubsection.4.5.3.13}%
+\contentsline {subsection}{\numberline {4.5.4}Documentación de los datos miembro}{26}{subsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.4.1}torneos\_disputados}{26}{subsubsection.4.5.4.1}%
+\contentsline {subsubsection}{\numberline {4.5.4.2}posicion}{26}{subsubsection.4.5.4.2}%
+\contentsline {subsubsection}{\numberline {4.5.4.3}puntos}{26}{subsubsection.4.5.4.3}%
+\contentsline {subsubsection}{\numberline {4.5.4.4}partidos}{26}{subsubsection.4.5.4.4}%
+\contentsline {subsubsection}{\numberline {4.5.4.5}sets}{27}{subsubsection.4.5.4.5}%
+\contentsline {section}{\numberline {4.6}Referencia de la Clase Torneo}{27}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Descripción detallada}{28}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Documentación del constructor y destructor}{28}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}Torneo()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{28}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}Torneo()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{28}{subsubsection.4.6.2.2}%
+\contentsline {subsection}{\numberline {4.6.3}Documentación de las funciones miembro}{29}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}generar\_enfr()}{29}{subsubsection.4.6.3.1}%
+\contentsline {subsubsection}{\numberline {4.6.3.2}info\_participantes()}{29}{subsubsection.4.6.3.2}%
+\contentsline {subsubsection}{\numberline {4.6.3.3}imprimir\_enfrentamientos()}{29}{subsubsection.4.6.3.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.4}imprimir\_resultados()}{30}{subsubsection.4.6.3.4}%
+\contentsline {subsubsection}{\numberline {4.6.3.5}listar\_puntos()}{30}{subsubsection.4.6.3.5}%
+\contentsline {subsubsection}{\numberline {4.6.3.6}leer\_inscritos()}{30}{subsubsection.4.6.3.6}%
+\contentsline {subsubsection}{\numberline {4.6.3.7}leer\_resultados()}{31}{subsubsection.4.6.3.7}%
+\contentsline {subsection}{\numberline {4.6.4}Documentación de los datos miembro}{31}{subsection.4.6.4}%
+\contentsline {subsubsection}{\numberline {4.6.4.1}categoria}{31}{subsubsection.4.6.4.1}%
+\contentsline {subsubsection}{\numberline {4.6.4.2}inscritos}{31}{subsubsection.4.6.4.2}%
+\contentsline {subsubsection}{\numberline {4.6.4.3}enfrentamientos}{31}{subsubsection.4.6.4.3}%
+\contentsline {subsubsection}{\numberline {4.6.4.4}resultados}{31}{subsubsection.4.6.4.4}%
+\contentsline {chapter}{\numberline {5}Documentación de archivos}{33}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Referencia del Archivo Cjt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}categorias.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hh}{33}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Descripción detallada}{33}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Referencia del Archivo Cjt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}jugadores.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hh}{33}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Descripción detallada}{34}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Referencia del Archivo Cjt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}torneos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hh}{34}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Descripción detallada}{34}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Referencia del Archivo Jugador.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hh}{34}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Descripción detallada}{35}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Documentación de los \textquotesingle {}typedefs\textquotesingle {}}{35}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}Estadisticas}{35}{subsubsection.5.4.2.1}%
+\contentsline {section}{\numberline {5.5}Referencia del Archivo main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cc}{35}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Descripción detallada}{36}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Documentación de las funciones}{36}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}main()}{36}{subsubsection.5.5.2.1}%
+\contentsline {section}{\numberline {5.6}Referencia del Archivo Torneo.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hh}{38}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Descripción detallada}{38}{subsection.5.6.1}%
