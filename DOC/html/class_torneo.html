@@ -241,12 +241,12 @@ Puntos ganados por los jugadores (y estadísticas "locales") </li>
 
 <p class="definition">Definición en la línea <a class="el" href="_torneo_8cc_source.html#l00007">7</a> del archivo <a class="el" href="_torneo_8cc_source.html">Torneo.cc</a>.</p>
 <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                                       {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (not ((prod + 1 - a.value()) &gt; n)) {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        BinTree&lt;int&gt; left = BinTree&lt;int&gt;(a.value());</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> ((prod + 1 - a.value()) &lt;= n) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        BinTree&lt;int&gt; left(a.value());</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;(&#39;</span>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696">modificar</a>(left, n, 2*prod);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        BinTree&lt;int&gt;right = BinTree&lt;int&gt;(prod + 1 - a.value());</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        BinTree&lt;int&gt;right(prod + 1 - a.value());</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696">modificar</a>(right, n, 2*prod);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;)&#39;</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        a = BinTree&lt;int&gt;(a.value(), left, right);</div>

@@ -5,12 +5,12 @@
 //######################################//
 
 void Torneo::modificar(BinTree<int>& a, int n, int prod) {
-    if (not ((prod + 1 - a.value()) > n)) {
-        BinTree<int> left = BinTree<int>(a.value());
+    if ((prod + 1 - a.value()) <= n) {
+        BinTree<int> left(a.value());
         cout << '(';
         modificar(left, n, 2*prod);
         cout << ' ';
-        BinTree<int>right = BinTree<int>(prod + 1 - a.value());
+        BinTree<int>right(prod + 1 - a.value());
         modificar(right, n, 2*prod);
         cout << ')';
         a = BinTree<int>(a.value(), left, right);

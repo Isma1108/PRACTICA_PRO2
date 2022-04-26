@@ -73,12 +73,12 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//######################################//</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696">    7</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696">Torneo::modificar</a>(BinTree&lt;int&gt;&amp; a, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> prod) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (not ((prod + 1 - a.value()) &gt; n)) {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        BinTree&lt;int&gt; left = BinTree&lt;int&gt;(a.value());</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> ((prod + 1 - a.value()) &lt;= n) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        BinTree&lt;int&gt; left(a.value());</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;(&#39;</span>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696">modificar</a>(left, n, 2*prod);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        BinTree&lt;int&gt;right = BinTree&lt;int&gt;(prod + 1 - a.value());</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        BinTree&lt;int&gt;right(prod + 1 - a.value());</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696">modificar</a>(right, n, 2*prod);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        cout &lt;&lt; <span class="charliteral">&#39;)&#39;</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        a = BinTree&lt;int&gt;(a.value(), left, right);</div>
@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//######################################//</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    MÉTODOS PÚBLICOS DE A LA CLASE    //</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    MÉTODOS PÚBLICOS DE LA CLASE      //</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//######################################//</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_torneo.html#a7bf6d35a7ec8d0e13a0bed8deb8add3e">   46</a></span>&#160;<a class="code" href="class_torneo.html#a7bf6d35a7ec8d0e13a0bed8deb8add3e">Torneo::Torneo</a>() {}</div>

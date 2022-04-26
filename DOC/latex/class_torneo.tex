@@ -141,12 +141,12 @@ Definición en la línea 7 del archivo Torneo.\+cc.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{7                                                        \{}
-\DoxyCodeLine{8     \textcolor{keywordflow}{if} (not ((prod + 1 -\/ a.value()) > n)) \{}
-\DoxyCodeLine{9         BinTree<int> left = BinTree<int>(a.value());}
+\DoxyCodeLine{8     \textcolor{keywordflow}{if} ((prod + 1 -\/ a.value()) <= n) \{}
+\DoxyCodeLine{9         BinTree<int> left(a.value());}
 \DoxyCodeLine{10         cout << \textcolor{charliteral}{'('};}
 \DoxyCodeLine{11         \mbox{\hyperlink{class_torneo_a7cfc3a3d5a8a7575821a0bef8db60696}{modificar}}(left, n, 2*prod);}
 \DoxyCodeLine{12         cout << \textcolor{charliteral}{' '};}
-\DoxyCodeLine{13         BinTree<int>right = BinTree<int>(prod + 1 -\/ a.value());}
+\DoxyCodeLine{13         BinTree<int>right(prod + 1 -\/ a.value());}
 \DoxyCodeLine{14         \mbox{\hyperlink{class_torneo_a7cfc3a3d5a8a7575821a0bef8db60696}{modificar}}(right, n, 2*prod);}
 \DoxyCodeLine{15         cout << \textcolor{charliteral}{')'};}
 \DoxyCodeLine{16         a = BinTree<int>(a.value(), left, right);}

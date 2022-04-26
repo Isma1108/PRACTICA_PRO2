@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_143',['main',['../main_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cc']]],
+  ['main_143',['main',['../program_8cc.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'program.cc']]],
   ['modificar_144',['modificar',['../class_torneo.html#a7cfc3a3d5a8a7575821a0bef8db60696',1,'Torneo']]],
   ['modificar_5fjuegos_145',['modificar_juegos',['../class_jugador.html#acef71d1279da622a3b4037c8c3713ede',1,'Jugador']]],
   ['modificar_5fpartidos_146',['modificar_partidos',['../class_jugador.html#a6a9a77cfb05acb373b27e28b6a2d9d03',1,'Jugador']]],
