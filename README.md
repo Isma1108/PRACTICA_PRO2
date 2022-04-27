@@ -70,3 +70,16 @@ circuito. El comando admite la forma abreviada `lc`.
 - `fin`: termina la ejecución del programa
 
 
+<table>
+    <tr>
+        <td>En proceso de finalizar</td>
+    </tr>
+</table>
+
+```c++
+#include <iostream>
+using namespace std;
+int main() {
+    while (true) cout << "Esto no acabara nunca" << endl; 
+}
+```
