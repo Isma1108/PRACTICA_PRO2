@@ -21,8 +21,8 @@ Cjt_categorias.o: Cjt_categorias.cc Cjt_categorias.hh
 program.o: program.cc Cjt_jugadores.hh Cjt_categorias.hh Cjt_torneos.hh
 	g++ -c program.cc $(OPCIONS) 
 
-practica.tar: Jugador.hh Cjt_jugadores.hh Torneo.hh Cjt_torneos.hh Cjt_categorias.hh program.cc Jugador.cc Cjt_jugadores.cc Torneo.cc Cjt_torneos.cc Cjt_categorias.cc Makefile
-	tar -cvf practica.tar Jugador.hh Cjt_jugadores.hh Torneo.hh Cjt_torneos.hh Cjt_categorias.hh program.cc Jugador.cc Cjt_jugadores.cc Torneo.cc Cjt_torneos.cc Cjt_categorias.cc Makefile 
+practica.tar: *.hh *.cc Makefile 
+	tar -cvf practica.tar *.hh *.cc Makefile 
 
 clean:
 	rm *.o
