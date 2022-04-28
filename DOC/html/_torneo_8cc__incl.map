@@ -1,7 +1,0 @@
-<map id="Torneo.cc" name="Torneo.cc">
-<area shape="rect" id="node1" title=" " alt="" coords="99,5,178,32"/>
-<area shape="rect" id="node2" href="$_torneo_8hh.html" title="Especificación de la clase Torneo." alt="" coords="99,80,178,107"/>
-<area shape="rect" id="node3" href="$_cjt__categorias_8hh.html" title="Especificacion de la clase Cjt_categorias." alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node4" href="$_cjt__jugadores_8hh.html" title="Especificación de la clase Cjt_jugadores." alt="" coords="153,155,271,181"/>
-<area shape="rect" id="node5" href="$_jugador_8hh.html" title="Especificación de la clase Jugador." alt="" coords="169,229,255,256"/>
-</map>
