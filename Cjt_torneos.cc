@@ -35,13 +35,17 @@ void Cjt_torneos::iniciar_torneo(const string& t, const Cjt_jugadores& j) {
     map<string,Torneo>::iterator it = torneos.find(t);
     it->second.leer_inscritos(j);
     it->second.generar_enfr();
+    it->second.imprimir_enf();
     //No es necesario imprimir el cuadro de emparejamientos, ya que el método
     //generar se encarga de confeccionar el cuadro e imprimirlo de forma paralela.
 }
 
 void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j) {
+    map<string,Torneo>::iterator it = torneos.find(t);
+    it->second.leer_resultados();
+    cout << endl;
+    it->second.imprimir_resultados();
     Cjt_jugadores xd = j;
-    string d = t;
 }
 
 void Cjt_torneos::listar_torneos(const Cjt_categorias& c) const {

@@ -24,6 +24,7 @@ struct Participante {
 	pair<int,int> juegos_gp;
 	pair<int,int> sets_gp;
 	pair<int,int> partidos_gp;
+	bool actualizado;
 };
 
 /** @class Torneo
@@ -60,7 +61,11 @@ class Torneo
 				los emparejamientos iniciales.
 		*/
 		void modificar(BinTree<int>& a, int n, int prod);
-		//void imprimir(const BinTree<int>& a, const Cjt_jugadores& j) const;
+		void imprimir(const BinTree<int>& a) const;
+		void lectura_res(BinTree<string>& a);
+		void imprimir_res(const BinTree<string>& a) const; 
+		void actualizar(const BinTree<string>& a1, BinTree<int>& a2, bool& k);
+		int ganador(const string& p) const;
 	
 	public:
 		//Constructoras
@@ -88,6 +93,8 @@ class Torneo
 		*/
 		void generar_enfr();
 
+		void actualizar_arbol_enf();
+
 		//Consultoras
 		
 		/** @brief Consultora que devuelve la estructura que almacena la información de 
@@ -114,7 +121,7 @@ class Torneo
 				\post Se ha imprimido por el canal standard de salida el cuadro de
 				emparejamientos de los jugadores inscritos.
 		*/
-		void imprimir_enf(const Cjt_jugadores& j) const;
+		void imprimir_enf() const;
 
 
 		/** @brief Operación de escritura

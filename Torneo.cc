@@ -7,13 +7,22 @@
 void Torneo::modificar(BinTree<int>& a, int n, int prod) {
     if ((prod + 1 - a.value()) <= n) {
         BinTree<int> left(a.value());
-        cout << '(';
         modificar(left, n, 2*prod);
-        cout << ' ';
         BinTree<int>right(prod + 1 - a.value());
         modificar(right, n, 2*prod);
-        cout << ')';
         a = BinTree<int>(a.value(), left, right);
+    }
+}
+
+
+void Torneo::imprimir(const BinTree<int>& a) const {
+    BinTree<int> left = a.left();
+    if (not left.empty()) {
+        cout << '(';
+        imprimir(left);
+        cout << ' ';
+        imprimir(a.right());
+        cout << ')';
     }
     else {
         int n = a.value();
@@ -21,26 +30,45 @@ void Torneo::modificar(BinTree<int>& a, int n, int prod) {
     }
 }
 
-/*
-void Torneo::imprimir(const BinTree<int>& a, const Cjt_jugadores& j) const {
-    BinTree<int> left = a.left();
-    if (not left.empty()) {
-        cout << '(';
-        imprimir(left, j);
-        cout << ' ';
-        imprimir(a.right(), j);
-        cout << ')';
+void Torneo::lectura_res(BinTree<string>& a) {
+    string p;
+    cin >> p;
+    if (p != "0") {
+        BinTree<string> left, right;
+        lectura_res(left);
+        lectura_res(right);
+        a = BinTree<string>(p, left, right);
     }
+}
+
+//de momento en preorden
+void Torneo::imprimir_res(const BinTree<string>& a) const {
+    if (not a.empty()) {
+        cout <<  a.value() << endl;;
+        imprimir_res(a.left());
+        imprimir_res(a.right());
+    }
+}
+
+int Torneo::ganador(const string& p) const {
+    if (p == "1-0") return 1;
+    else if (p == "0-1") return 2;
     else {
-        int n = a.value();
-        string nombre = j.nombre_jugador(inscritos[n-1].consultar_pos());
-        cout << n << '.' << nombre;
+        int n = p.size();
+        if (p[n-3] > p[n-1]) return 1;
+        else return 2;
     }
+}
+
+/*
+void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2, bool& k) {
+
 }
 */
 
+
 //######################################//
-//    MÉTODOS PÚBLICOS DE LA CLASE      //
+//     MÉTODOS PÚBLICOS DE LA CLASE     //
 //######################################//
 
 Torneo::Torneo() {}
@@ -52,8 +80,12 @@ Torneo::Torneo(int c) {
 void Torneo::generar_enfr() {
     enf = BinTree<int>(1);
     modificar(enf, inscritos.size(), 2);
-    cout << endl;
 }
+
+/*
+void Torneo::actualizar_arbol_enf() {
+}
+*/
 
 /*
 vector<Participante> Torneo::info_participantes() const {
@@ -67,14 +99,15 @@ int Torneo::consultar_categoria() const {
     return categoria;
 }
 
-/*
-void Torneo:: imprimir_enf(const Cjt_jugadores& j) const {
-    imprimir(enf, j);
+void::Torneo::imprimir_enf() const {
+    imprimir(enf);
     cout << endl;
 }
-*/
 
-void Torneo::imprimir_resultados() const {}
+
+void Torneo::imprimir_resultados() const{
+    imprimir_res(resultados);
+}
 
 void Torneo::listar_puntos() const {}
 
@@ -91,8 +124,10 @@ void Torneo::leer_inscritos(const Cjt_jugadores& j) {
         x.sets_gp.first = x.sets_gp.second = 0;
         x.partidos_gp.first = x.partidos_gp.second = 0;
         inscritos[i] = x;
+        x.actualizado = false;
     }
 }
 
-void Torneo::leer_resultados() {}
-
+void Torneo::leer_resultados() {
+    lectura_res(resultados);
+}

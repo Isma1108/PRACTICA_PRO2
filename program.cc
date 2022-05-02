@@ -45,57 +45,58 @@ int main()
 	cin >> cm;
 	while (cm != "fin") {
 		string p;
+		cout << '#' << cm;
 		if (cm == "nuevo_jugador" or cm == "nj") {
 			cin >> p;
-			cout << '#' << cm << ' ' << p << endl;
+			cout << ' ' << p << endl;
 			if (not j.nuevo_jugador(p)) cout << "error: ya existe un jugador con ese nombre" << endl;
 		}
 		else if (cm == "nuevo_torneo" or cm == "nt") {
 			int cat;
 			cin >> p >> cat;
-			cout << '#' << cm << ' ' << p << ' ' << cat << endl;
+			cout << ' ' << p << ' ' << cat << endl;
 			if (not c.existe_categoria(cat)) cout << "error: la categoria no existe" << endl;
 			else if (not t.nuevo_torneo(p, cat)) cout << "error: ya existe un torneo con ese nombre" << endl;
 		}
 		else if (cm == "baja_jugador" or cm == "bj") {
 			cin >> p;
-			cout << '#' << cm << ' ' << p << endl;
+			cout << ' ' << p << endl;
 			if (not j.baja_jugador(p)) cout << "error: el jugador no existe" << endl;
 		}
 		else if (cm == "baja_torneo" or cm == "bt") {
 			cin >> p;
-			cout << '#' << cm << ' ' << p << endl;
+			cout << ' ' << p << endl;
 			if (not t.baja_torneo(p, j)) cout << "error: el torneo no existe" << endl;
 		}
 		else if (cm == "iniciar_torneo" or cm == "it") {
 			cin >> p;
-			cout << '#' << cm << ' ' << p << endl;
+			cout << ' ' << p << endl;
 			t.iniciar_torneo(p, j);
 		}
 		else if (cm == "finalizar_torneo" or cm == "ft") {
 			cin >> p;
-			cout << '#' << cm << ' ' << p << endl;  
+			cout << ' ' << p << endl;  
 			t.finalizar_torneo(p, j);
 		}
 		else if (cm == "listar_ranking" or cm == "lr") {
-			cout << '#' << cm << endl;
+			cout << endl;
 			j.listar_ranking();
 		}
 		else if (cm == "listar_jugadores" or cm == "lj") {
-			cout << '#' << cm << endl;
+			cout << endl;
 			j.listar_jugadores();
 		}
 		else if (cm == "consultar_jugador" or cm == "cj") {
 			cin >> p;
-			cout << '#' << cm << ' ' << p << endl;
+			cout << ' ' << p << endl;
 			if (not j.consultar_jugador(p)) cout << "error: el jugador no existe" << endl;
 		}
 		else if (cm == "listar_torneos" or cm == "lt") {
-			cout << '#' << cm << endl;
+			cout << endl;
 			t.listar_torneos(c);
 		}
 		else if (cm == "listar_categorias" or cm == "lc") {
-			cout << '#' << cm << endl;
+			cout << endl;
 			c.listar_categorias();
 		}
 		cin >> cm;
