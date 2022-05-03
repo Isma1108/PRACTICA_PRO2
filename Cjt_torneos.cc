@@ -43,6 +43,7 @@ void Cjt_torneos::iniciar_torneo(const string& t, const Cjt_jugadores& j) {
 void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j) {
     map<string,Torneo>::iterator it = torneos.find(t);
     it->second.leer_resultados();
+    it->second.actualizar_arbol_enf();
     cout << endl;
     it->second.imprimir_resultados();
     Cjt_jugadores xd = j;

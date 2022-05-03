@@ -63,8 +63,8 @@ class Torneo
 		void modificar(BinTree<int>& a, int n, int prod);
 		void imprimir(const BinTree<int>& a) const;
 		void lectura_res(BinTree<string>& a);
-		void imprimir_res(const BinTree<string>& a) const; 
-		void actualizar(const BinTree<string>& a1, BinTree<int>& a2, bool& k);
+		void imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) const; 
+		void actualizar(const BinTree<string>& a1, BinTree<int>& a2);
 		int ganador(const string& p) const;
 	
 	public:

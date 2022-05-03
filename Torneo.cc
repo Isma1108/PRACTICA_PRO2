@@ -42,11 +42,16 @@ void Torneo::lectura_res(BinTree<string>& a) {
 }
 
 //de momento en preorden
-void Torneo::imprimir_res(const BinTree<string>& a) const {
-    if (not a.empty()) {
-        cout <<  a.value() << endl;;
-        imprimir_res(a.left());
-        imprimir_res(a.right());
+void Torneo::imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) const {
+    if (not a1.empty()) {
+        int nl = a2.left().value();
+        int nr = a2.right().value();
+        cout << '(';
+        cout << nl << '.' << inscritos[nl-1].nombre << " vs ";
+        cout << nr << '.' << inscritos[nr-1].nombre << ' ' << a1.value();
+        imprimir_res(a1.left(), a2.left());
+        imprimir_res(a1.right(), a2.right());
+        cout << ')';
     }
 }
 
@@ -60,11 +65,18 @@ int Torneo::ganador(const string& p) const {
     }
 }
 
-/*
-void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2, bool& k) {
-
+void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2) {
+    BinTree<int> l = a2.left();
+    BinTree<int> r = a2.right();
+    if (not (a1.left().empty() and a1.right().empty())) {
+        if (not a1.left().empty()) actualizar(a1.left(), l);
+        actualizar(a1.right(), r);
+    }
+    string p = a1.value();
+    if (ganador(p) == 1) a2 = BinTree<int>(a2.left().value(), l, r);
+    else a2 = BinTree<int>(a2.right().value(), l, r);
 }
-*/
+
 
 
 //######################################//
@@ -82,10 +94,11 @@ void Torneo::generar_enfr() {
     modificar(enf, inscritos.size(), 2);
 }
 
-/*
+
 void Torneo::actualizar_arbol_enf() {
+    actualizar(resultados, enf);
 }
-*/
+
 
 /*
 vector<Participante> Torneo::info_participantes() const {
@@ -106,7 +119,8 @@ void::Torneo::imprimir_enf() const {
 
 
 void Torneo::imprimir_resultados() const{
-    imprimir_res(resultados);
+    imprimir_res(resultados, enf);
+    cout << endl;
 }
 
 void Torneo::listar_puntos() const {}
