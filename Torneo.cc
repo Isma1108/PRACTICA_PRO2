@@ -41,7 +41,6 @@ void Torneo::lectura_res(BinTree<string>& a) {
     }
 }
 
-//de momento en preorden
 void Torneo::imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) const {
     if (not a1.empty()) {
         int nl = a2.left().value();
@@ -69,8 +68,8 @@ void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2) {
         actualizar(a1.right(), r);
     }
     string p = a1.value();
-    if (ganador(p) == 1) a2 = BinTree<int>(a2.left().value(), l, r);
-    else a2 = BinTree<int>(a2.right().value(), l, r);
+    if (ganador(p) == 1) a2 = BinTree<int>(l.value(), l, r);
+    else a2 = BinTree<int>(r.value(), l, r);
 }
 
 
