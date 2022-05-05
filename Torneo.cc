@@ -56,13 +56,9 @@ void Torneo::imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) con
 }
 
 int Torneo::ganador(const string& p) const {
-    if (p == "1-0") return 1;
-    else if (p == "0-1") return 2;
-    else {
-        int n = p.size();
-        if (p[n-3] > p[n-1]) return 1;
-        else return 2;
-    }
+    int n = p.size();
+    if (p[n-3] > p[n-1]) return 1;
+    else return 2;
 }
 
 void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2) {
