@@ -31,6 +31,8 @@ private:
 	map<string,Jugador> jugadores;
 	vector<map_it> ranking;
 
+	static bool comp(const map_it& a, const map_it& b);
+
 public:
 	//Constructoras
 	
@@ -76,17 +78,17 @@ public:
 			puntos que habían ganado en el torneo en cuestión (información disponible en el
 			vector), además de que se mantiene el orden definido para el ranking.
 	*/
-	void restar_puntos(const vector<Jugador>& datos);
+	void restar_puntos(const string& p, int n);
 
-	/** @brief Modificadora que se encarga de actualizar las estadísticas de ciertos 
-	    jugadores dado un vector con esa información, además de mantener el orden 
-			definido para el ranking.
-			\pre <em>datos</em> es un vector de Jugadores que tiene la información de todas 
-			sus estadísticas en un torneo concreto.
-			\post Se han actualizado las estadísticas de los jugadores respectivos del
-			conjunto de jugadores, además de que se mantiene el orden definido para el ranking.
+	/**
+	
 	*/
-	void actualizar_ranking(const vector<Jugador>& datos);
+	void actualizar_datos(const string& p, int pts, pair<int,int> j, pair<int,int> s, pair<int,int> pr);
+
+	/**
+
+	*/
+	void reordenar_ranking();
 
 	//Consultoras
 		

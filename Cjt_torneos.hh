@@ -86,7 +86,9 @@ public:
 			en el momento de iniciar el torneo. Además, se han actualizado el ranking
 			y las estadísticas de los jugdores.
 	*/
-	void finalizar_torneo(const string& t, Cjt_jugadores& j);
+	void finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_categorias& c);
+
+	void eliminar_puntos(const string& p);
 	
 	//Escritura
 	

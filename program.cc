@@ -62,6 +62,7 @@ int main()
 			cin >> p;
 			cout << ' ' << p << endl;
 			if (not j.baja_jugador(p)) cout << "error: el jugador no existe" << endl;
+			else t.eliminar_puntos(p);
 		}
 		else if (cm == "baja_torneo" or cm == "bt") {
 			cin >> p;
@@ -76,7 +77,7 @@ int main()
 		else if (cm == "finalizar_torneo" or cm == "ft") {
 			cin >> p;
 			cout << ' ' << p << endl;  
-			t.finalizar_torneo(p, j);
+			t.finalizar_torneo(p, j, c);
 		}
 		else if (cm == "listar_ranking" or cm == "lr") {
 			cout << endl;

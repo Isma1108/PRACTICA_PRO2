@@ -21,12 +21,9 @@ bool Cjt_torneos::baja_torneo(const string& t, Cjt_jugadores& j) {
     if (it == torneos.end()) return false;
     else {
         --T;
+        it->second.restar_edicion_anterior(j);
         torneos.erase(it);
         cout << T << endl;
-
-        //provisional, se deberia restar puntos en caso que se haya dado
-        //a cabo una versión anterior del torneo
-        Cjt_jugadores prov = j;
         return true;
     }
 }
@@ -40,12 +37,19 @@ void Cjt_torneos::iniciar_torneo(const string& t, const Cjt_jugadores& j) {
     //generar se encarga de confeccionar el cuadro e imprimirlo de forma paralela.
 }
 
-void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j) {
+void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_categorias& c) {
     map<string,Torneo>::iterator it = torneos.find(t);
     it->second.leer_resultados();
-    it->second.actualizar_arbol_enf();
-    it->second.imprimir_resultados();
-    Cjt_jugadores xd = j;
+    it->second.actualizar_arbol_enf(c, j);
+    it->second.imprimir_resultados(j);
+}
+
+void Cjt_torneos::eliminar_puntos(const string& p) {
+    torneos_it it = torneos.begin();
+    while (it != torneos.end()) {
+        it->second.eliminar_puntos(p);      
+        ++it;
+    }
 }
 
 void Cjt_torneos::listar_torneos(const Cjt_categorias& c) const {

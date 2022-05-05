@@ -7,7 +7,9 @@ bool Cjt_categorias::existe_categoria(int c) const {
     else return false;
 }
 
-//int Cjt_categorias::puntos_categoria(int c, int k) const {}
+int Cjt_categorias::puntos_categoria(int c, int k) const {
+    return categorias[c - 1].puntuacion_por_nivel[k - 1];
+}
 
 string Cjt_categorias::consultar_nombre(int c) const {
     return categorias[c-1].nombre;

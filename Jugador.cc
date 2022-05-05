@@ -11,15 +11,28 @@ Jugador::Jugador(int p) {
 }
 
 
-//void Jugador::modificar_partidos(int g, int p) {}
+void Jugador::modificar_partidos(pair<int,int> pr) {
+    partidos.first += pr.first;
+    partidos.second += pr.second;
+}
 
-//void Jugador::modificar_sets(int g, int p) {}
+void Jugador::modificar_sets(pair<int,int> s) {
+    sets.first += s.first;
+    sets.second += s.second;
+}
 
-//void Jugador::modificar_juegos(int g, int p) {}
+void Jugador::modificar_juegos(pair<int,int> j) {
+    juegos.first += j.first;
+    juegos.second += j.second;
+}
 
-//void Jugador::nuevo_td() {}
+void Jugador::nuevo_td() {
+    ++torneos_disputados;
+}
 
-//void Jugador::modificar_puntos(int p) {}
+void Jugador::modificar_puntos(int p) {
+    puntos += p;
+}
 
 void Jugador::modificar_posicion(int p) {
     posicion = p;

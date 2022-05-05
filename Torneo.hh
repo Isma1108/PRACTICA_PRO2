@@ -23,8 +23,7 @@ struct Participante {
 	int puntos;
 	pair<int,int> juegos_gp;
 	pair<int,int> sets_gp;
-	pair<int,int> partidos_gp;
-	bool actualizado;
+	pair<int,int> partidos_gp; //todos pierden uno (excepto el ganador) y ganan x
 };
 
 /** @class Torneo
@@ -47,6 +46,7 @@ class Torneo
 		//ya que el map de torneos tiene como clave ese nombre.
 		int categoria;
 		vector<Participante> inscritos;
+		vector<Participante> edicion_anterior; 
 		BinTree<int> enf;
 		BinTree<string> resultados;
 	
@@ -64,8 +64,9 @@ class Torneo
 		void imprimir(const BinTree<int>& a) const;
 		void lectura_res(BinTree<string>& a);
 		void imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) const; 
-		void actualizar(const BinTree<string>& a1, BinTree<int>& a2);
+		void actualizar(const BinTree<string>& a1, BinTree<int>& a2, int n, const Cjt_categorias& c);
 		int ganador(const string& p) const;
+		void actualizar_est(int left, int right, const string& p);
 	
 	public:
 		//Constructoras
@@ -93,20 +94,13 @@ class Torneo
 		*/
 		void generar_enfr();
 
-		void actualizar_arbol_enf();
+		void actualizar_arbol_enf(const Cjt_categorias& c, Cjt_jugadores& j);
+
+		void restar_edicion_anterior(Cjt_jugadores& j);
+
+		void eliminar_puntos(const string& p);
 
 		//Consultoras
-		
-		/** @brief Consultora que devuelve la estructura que almacena la información de 
-		 		los participantes del torneo. (tiene el objetivo de poder acceder a ésta
-				información desde otra clase, para poder actualizar de forma adecuada el 
-				ranking y las estadísticas de los jugadors, ya que luego ésta información se 
-				pierde al leer los nuevos participantes de la posible nueva edición).
-				\pre <em>cierto</em>
-				\post Se devuelve la estructura que almacena toda la información de los jugadores
-				del torneo.
-		*/
-		vector<Participante> info_participantes() const;
 		
 		/** @brief Consultora que devuelve la categoria del torneo.
 		 		\pre <em>cierto</em>
@@ -129,7 +123,7 @@ class Torneo
 				\post Se ha imprimido por el canal standard de salida el cuadro de
 				resultados, una vez finalizado el torneo.
 		*/
-		void imprimir_resultados() const;
+		void imprimir_resultados(Cjt_jugadores& j) const;
 
 		/** @brief Operación de escritura
 		 		\pre <em>cierto</em>

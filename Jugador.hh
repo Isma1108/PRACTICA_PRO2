@@ -60,21 +60,21 @@ public:
 			\post El parámetro implícito pasa a tener <em>g</em> partidos ganados y <em>p</em> 
 			partidos perdidos.
 	*/
-	void modificar_partidos(int g, int p);
+	void modificar_partidos(pair<int,int> pr);
 
 	/** @brief Modificadora del par que almacena la información de los sets ganados/perdidos.
 	 		\pre <em>g</em> es un entero que representa los sets ganados y <em>p</em> los perdidos.
 			\post El parámetro implícito pasa a tener <em>g</em> sets ganados y <em>p</em> 
 			sets perdidos.
 	*/
-	void modificar_sets(int g, int p);
+	void modificar_sets(pair<int,int> s);
 	
 	/** @brief Modificadora del par que almacena la información de los juegos ganados/perdidos.
 	 		\pre <em>g</em> es un entero que representa los juegos ganados y <em>p</em> los perdidos.
 			\post El parámetro implícito pasa a tener <em>g</em> juegos ganados y <em>p</em> 
 			juegos perdidos.
 	*/
-	void modificar_juegos(int g, int p);
+	void modificar_juegos(pair<int,int> j);
 
 	/** @brief Modificadora del número de torneos disputados.
 	 		\pre <em>cierto</em>

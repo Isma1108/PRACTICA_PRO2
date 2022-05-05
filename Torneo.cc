@@ -60,18 +60,54 @@ int Torneo::ganador(const string& p) const {
     else return 2;
 }
 
-void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2) {
+void Torneo::actualizar_est(int left, int right, const string& p) {
+    if (p.size() == 11) {
+        inscritos[left].sets_gp.first += 2;
+        inscritos[left].sets_gp.second += 1;
+        inscritos[right].sets_gp.first += 1;
+        inscritos[right].sets_gp.second += 2; 
+    }
+    else if (p.size() == 7) {
+        inscritos[left].sets_gp.first += 2;
+        inscritos[right].sets_gp.second += 2; 
+    }
+    inscritos[left].partidos_gp.first += 1;
+    inscritos[right].partidos_gp.second += 1;
+}
+
+void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2, int n, const Cjt_categorias& c) {
     BinTree<int> l = a2.left();
     BinTree<int> r = a2.right();
     if (not (a1.left().empty() and a1.right().empty())) {
-        if (not a1.left().empty()) actualizar(a1.left(), l);
-        actualizar(a1.right(), r);
+        if (not a1.left().empty()) actualizar(a1.left(), l, n + 1, c);
+        actualizar(a1.right(), r, n + 1, c);
     }
     string p = a1.value();
-    if (ganador(p) == 1) a2 = BinTree<int>(l.value(), l, r);
-    else a2 = BinTree<int>(r.value(), l, r);
+    int left = l.value(), right = r.value();
+    if (ganador(p) == 1) {
+        actualizar_est(left - 1, right - 1 , p);  
+        inscritos[right - 1].puntos = c.puntos_categoria(categoria, n);
+        a2 = BinTree<int>(left, l, r);
+    }
+    else {
+        actualizar_est(right - 1, left - 1, p);
+        inscritos[left - 1].puntos = c.puntos_categoria(categoria, n);
+        a2 = BinTree<int>(right, l, r);
+    }
+    int g1 = 0, g2 = 0;
+    if (p.size() == 11) {
+        g1 = (p[0] - '0') + (p[4] - '0') + (p[8] - '0');
+        g2 = (p[2] - '0') + (p[6] - '0') + (p[10] - '0');
+    }
+    else if (p.size() == 7) {
+        g1 = (p[0] - '0') + (p[4] - '0');
+        g2 = (p[2] - '0') + (p[6] - '0');
+    }
+    inscritos[left - 1].juegos_gp.first += g1;
+    inscritos[left - 1].juegos_gp.second += g2;
+    inscritos[right - 1].juegos_gp.first += g2;
+    inscritos[right - 1].juegos_gp.second += g1;
 }
-
 
 
 //######################################//
@@ -90,18 +126,37 @@ void Torneo::generar_enfr() {
 }
 
 
-void Torneo::actualizar_arbol_enf() {
-    actualizar(resultados, enf);
+void Torneo::actualizar_arbol_enf(const Cjt_categorias& c, Cjt_jugadores& j) {
+    int n = edicion_anterior.size();
+    for (int i = 0; i < n; ++i) {
+        j.restar_puntos(edicion_anterior[i].nombre, edicion_anterior[i].puntos);
+    }
+    actualizar(resultados, enf, 2, c);
+    inscritos[enf.value() - 1].puntos = c.puntos_categoria(categoria, 1);
 }
 
-
-/*
-vector<Participante> Torneo::info_participantes() const {
-    //provisional;
-    vector<Participante> v;
-    return v;
+void Torneo::restar_edicion_anterior(Cjt_jugadores& j) {
+    if (inscritos.size() > 0) {
+        int n = inscritos.size();
+        for (int i = 0; i < n; ++i) {
+            j.restar_puntos(inscritos[i].nombre, inscritos[i].puntos);
+        }
+        j.reordenar_ranking();
+    }
 }
-*/
+
+void Torneo::eliminar_puntos(const string& p) {
+    int n = inscritos.size(), i = 0;
+    bool encontrado = false;
+    while (not encontrado and i < n) {
+        if (inscritos[i].nombre == p) {
+            inscritos[i].puntos = 0;
+            encontrado = true;
+        }
+        ++i;
+    }
+}
+
 
 int Torneo::consultar_categoria() const {
     return categoria;
@@ -113,14 +168,22 @@ void::Torneo::imprimir_enf() const {
 }
 
 
-void Torneo::imprimir_resultados() const{
+void Torneo::imprimir_resultados(Cjt_jugadores& j) const{
     imprimir_res(resultados, enf);
     cout << endl;
+    int n = inscritos.size();
+    for (int i = 0; i < n; ++i) {
+        j.actualizar_datos(inscritos[i].nombre, inscritos[i].puntos, inscritos[i].juegos_gp, 
+                inscritos[i].sets_gp, inscritos[i].partidos_gp);
+        cout << i + 1 << '.' << inscritos[i].nombre << ' ' << inscritos[i].puntos << endl;  
+    }
+    j.reordenar_ranking();
 }
 
 void Torneo::listar_puntos() const {}
 
 void Torneo::leer_inscritos(const Cjt_jugadores& j) {
+    if (inscritos.size() > 0) edicion_anterior = inscritos;
     int n;
     cin >> n;
     inscritos = vector<Participante>(n);
@@ -133,7 +196,6 @@ void Torneo::leer_inscritos(const Cjt_jugadores& j) {
         x.sets_gp.first = x.sets_gp.second = 0;
         x.partidos_gp.first = x.partidos_gp.second = 0;
         inscritos[i] = x;
-        x.actualizado = false;
     }
 }
 

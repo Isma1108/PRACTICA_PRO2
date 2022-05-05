@@ -1,6 +1,17 @@
 #include "Cjt_jugadores.hh"
+#include <algorithm>
 
 typedef map<string,Jugador>::iterator map_it;
+
+
+bool Cjt_jugadores::comp(const map_it& a, const map_it& b) {
+    int n1 = a->second.consultar_puntos();
+    int n2 = b->second.consultar_puntos();
+    if (n1 != n2) {
+        return n1 > n2;
+    }
+    return a->second.consultar_pos() < b->second.consultar_pos();
+}
 
 Cjt_jugadores::Cjt_jugadores() {}
 
@@ -33,9 +44,27 @@ bool Cjt_jugadores::baja_jugador(const string& p) {
     }
 }
 
-//void Cjt_jugadores::restar_puntos(const vector<Jugador>& datos) {}
+void Cjt_jugadores::restar_puntos(const string& p, int n) {
+    map_it it = jugadores.find(p);
+    if (it != jugadores.end()) it->second.modificar_puntos(-n);
+}
 
-//void Cjt_jugadores::actualizar_ranking(const vector<Jugador>& datos) {}
+void Cjt_jugadores::actualizar_datos(const string& p, int pts, pair<int,int> j, pair<int,int> s, pair<int,int> pr) {
+    map_it it = jugadores.find(p);
+    it->second.modificar_puntos(pts);
+    it->second.modificar_juegos(j);
+    it->second.modificar_sets(s);
+    it->second.modificar_partidos(pr);
+    it->second.nuevo_td();
+}
+
+void Cjt_jugadores::reordenar_ranking() {
+    sort(ranking.begin(), ranking.end(), comp);
+    int n = ranking.size();
+    for (int i = 0; i < n; ++i) {
+        ranking[i]->second.modificar_posicion(i+1);
+    }
+}
 
 bool Cjt_jugadores::existe_jugador(const string& p) const {
     if (jugadores.find(p) == jugadores.end()) return false;
