@@ -46,7 +46,7 @@ bool Cjt_jugadores::baja_jugador(const string& p) {
 
 void Cjt_jugadores::restar_puntos(const string& p, int n) {
     map_it it = jugadores.find(p);
-    if (it != jugadores.end()) it->second.modificar_puntos(-n);
+    if (it != jugadores.end()) it->second.modificar_puntos(n*(-1));
 }
 
 void Cjt_jugadores::actualizar_datos(const string& p, int pts, pair<int,int> j, pair<int,int> s, pair<int,int> pr) {

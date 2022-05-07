@@ -47,7 +47,7 @@ void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_
 void Cjt_torneos::eliminar_puntos(const string& p) {
     torneos_it it = torneos.begin();
     while (it != torneos.end()) {
-        it->second.eliminar_puntos(p);      
+        it->second.eliminar_puntos_jug(p);      
         ++it;
     }
 }

@@ -98,7 +98,7 @@ class Torneo
 
 		void restar_edicion_anterior(Cjt_jugadores& j);
 
-		void eliminar_puntos(const string& p);
+		void eliminar_puntos_jug(const string& p);
 
 		//Consultoras
 		
