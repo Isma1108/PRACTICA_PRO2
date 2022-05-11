@@ -15,8 +15,14 @@
 
 using namespace std;
 
+/** @typedef torneos_it
+ 		@brief Iterador que apunta a elementos de un map que tiene como llave un string
+		(que representa el nombre del torneo) y como contenido un objeto de tipo 'Torneo'
+*/
+typedef map<string,Torneo>::iterator torneos_it;
+
 /** @class Cjt_torneos
-    @brief Facilita la gestión de un conjunto de torneos (obj. 'Jugador')
+    @brief Facilita la gestión de un conjunto de torneos (obj. 'Torneo')
 
 		La clase tiene el propósito de gestionar un conjunto de torneos. Ésta permite
 		añadir, dar de baja, iniciar y finalizar torneos, así como listarlos por 
@@ -70,7 +76,7 @@ public:
 
 	/** @brief Modificadora que se encarga de "iniciar" un torneo.
 	    \pre <em>cierto</em>, ya que se garantiza que el torneo <em>t</em>
-			existe en el circuito.
+			existe en el circuito. <em>j</em> es el conjunto de jugadores del circuito.
 			\post Se ha leído la inscripción del torneo <em>t</em> y se ha confeccionado 
 			e impreso el cuadro de emparejamientos de los jugadores inscritos.
 	*/
@@ -79,15 +85,23 @@ public:
 	/** @brief Modificadora que se encarga de "finalizar" un torneo.
 	    \pre <em>cierto</em>, ya que se garantiza que el torneo <em>t</em> 
 			existe en el circuito y que previamente se ha ejecutado el comando
-			<em>iniciar_torneo</em>.
+			<em>iniciar_torneo</em>. <em>j</em> es el conjunto de jugadores del circuito y 
+			<em>c</em> el conjunto de categorias.
 			\post Se han leído los resultados del torneo <em>t</em>, se ha producido
 			e impreso el cuadro oficial de resultados y se han listado los puntos para 
 			el ránking ganados por cada uno de los participantes, por orden de ranking 
 			en el momento de iniciar el torneo. Además, se han actualizado el ranking
-			y las estadísticas de los jugdores.
+			y las estadísticas de los jugdores, restando a los jugdores de una posible 
+			edición anterior los puntos que habian ganado.
 	*/
 	void finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_categorias& c);
 
+	/** @brief Modificadora que pone al jugador con identificador <em>p</em>, los puntos a 0 
+	 		en todos los torneos en los que aparezca en la endición anterior.
+			\pre <em>p</em> es un identificador de un jugador del circuito.
+			\post En todos los torneos en los que el jugador con identificador <em>p</em> aparezca 
+			en la endición anterior, sus puntos ganados se ponen a 0.
+	*/
 	void eliminar_puntos(const string& p);
 	
 	//Escritura

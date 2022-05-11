@@ -1,7 +1,5 @@
 #include "Cjt_torneos.hh"
 
-typedef map<string,Torneo>::iterator torneos_it;
-
 Cjt_torneos::Cjt_torneos() {
     T = 0;
 }
@@ -29,19 +27,18 @@ bool Cjt_torneos::baja_torneo(const string& t, Cjt_jugadores& j) {
 }
 
 void Cjt_torneos::iniciar_torneo(const string& t, const Cjt_jugadores& j) {
-    map<string,Torneo>::iterator it = torneos.find(t);
+    torneos_it it = torneos.find(t);
     it->second.leer_inscritos(j);
     it->second.generar_enfr();
     it->second.imprimir_enf();
-    //No es necesario imprimir el cuadro de emparejamientos, ya que el método
-    //generar se encarga de confeccionar el cuadro e imprimirlo de forma paralela.
 }
 
 void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_categorias& c) {
-    map<string,Torneo>::iterator it = torneos.find(t);
+    torneos_it it = torneos.find(t);
     it->second.leer_resultados();
-    it->second.actualizar_arbol_enf(c, j);
-    it->second.imprimir_resultados(j);
+    it->second.actualizar_arbol_enf(c);
+    it->second.actualizar_datos(j);
+    it->second.imprimir_resultados();
 }
 
 void Cjt_torneos::eliminar_puntos(const string& p) {

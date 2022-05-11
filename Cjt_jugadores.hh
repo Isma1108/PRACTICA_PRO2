@@ -14,6 +14,10 @@
 
 using namespace std;
 
+/** @typedef map_it
+ 		@brief Iterador que apunta a elementos de un map que tiene como llave un string
+		(que representa el nombre del jugador) y como contenido un objeto de tipo 'Jugador'.
+*/
 typedef map<string,Jugador>::iterator map_it;
 
 /** @class Cjt_jugadores
@@ -21,7 +25,8 @@ typedef map<string,Jugador>::iterator map_it;
 
 		La clase tiene el propósito de gestionar un conjunto de jugadores. Ésta permite
 		añadir y dar de baja jugadores, así como listarlos, ya sea en conjunto o de forma
-		individual. Además almacena en un ranking a los jugadores en función de sus puntos.
+		individual. Además almacena en un ranking a los jugadores en función de sus puntos
+		y permite listar a los jugadores en función de su ranking.
 */
 
 class Cjt_jugadores
@@ -31,6 +36,13 @@ private:
 	map<string,Jugador> jugadores;
 	vector<map_it> ranking;
 
+	/** @brief Función booleana estática que se usa para ordenar el vector de iteradores 
+	 		<em>ranking</em>.
+			\pre <em>a</em> y <em>b</em> son iteradores que apuntan a jugadores existentes y
+			distintos del map de jugadores.
+			\post se devuelve true o false en función de si el jugador apuntado por <em>a</em>
+			deberia ir por delante en el ranking que el jugador apuntado por <em>b</em>
+	*/
 	static bool comp(const map_it& a, const map_it& b);
 
 public:
@@ -53,8 +65,7 @@ public:
 			<em>p</em>, y en caso contrario, a parte de devolver true, el número total 
 			de jugadores se ha incrementado en uno, y el jugador con identificador <em>p</em> 
 			se ha añadido al conjunto, con estadísticas a cero y última posición en el ranking. 
-			Además, se imprime por el canalstandard de salida el número 
-			total de jugadores.
+			Además, se imprime por el canal standard de salida el número total de jugadores.
 	*/
 	bool nuevo_jugador(const string& p);
 
@@ -65,42 +76,47 @@ public:
 			en el conjunto, y en caso contrario, a parte de devolver true, el ranking ha sido 
 			actualizado desplazando una posición hacia arriba a los jugadores siguientes del ranking, 
 			el número total de jugadores ha decrementado en uno, y el jugador con identificador 
-			<em>p</em> ha sido eliminado del conjunto.
+			<em>p</em> ha sido eliminado del conjunto. Además, se imprime por el canal standard de
+			salida el número total de jugadores.
 	*/
 	bool baja_jugador(const string& p);
 
-	/** @brief Modificadora que se encarga de restar puntos a ciertos jugadores
-	 		dado un vector con es información, además de mantener el orden definido
-			para el ranking.
-			\pre <em>datos</em> es un vector de Jugadores que tiene la información de todas 
-			sus estadísticas en un torneo concreto.
-			\post Se han restado a los jugadores respectivos del conjunto de jugadores los 
-			puntos que habían ganado en el torneo en cuestión (información disponible en el
-			vector), además de que se mantiene el orden definido para el ranking.
+	/** @brief Modificadora que se encarga de restar puntos a un jugador.
+	 		\pre <em>p</em> es un string que identifica a un jugador, que puede o no existir 
+			en el conjunto de jugadores, y <em>n</em> los puntos que se le deberia restar. 
+			\post En caso de que exista un jugador con nombre <em>p</em> en el conjunto de
+			jugadores este pasa a tener <em>n</em> puntos menos.
 	*/
 	void restar_puntos(const string& p, int n);
 
-	/**
-	
+	/** @brief Modificadora que se encarga de actualizar ciertos datos de un jugador del conjunto
+	 		dado su nombre.
+			\pre <em>p</em> es un identificador de un jugador existente en el conjunto, <em>pts</em>
+			es un entero que representa los puntos que hay que sumarle, y <em>j</em>, <em>s</em> y 
+			<em>pr</em> son pares que almacenan información de los juegos, sets y partidos (ganados - 
+			perdidos) que se deberian sumar a las estadísticas del jugador.
+			\post Las estadísticas del jugador con nombre <em>p</em> han sido actualizadas en base a la 
+			información pasada por parámetro.
 	*/
-	void actualizar_datos(const string& p, int pts, pair<int,int> j, pair<int,int> s, pair<int,int> pr);
+	void actualizar_datos(const string& p, int pts, pair<int,int> j, pair<int,int> s, 
+			pair<int,int> pr);
 
-	/**
-
+	/** @brief Modificadora que se encarga de reordenar el vector de iteradores del conjunto
+	 		que representa el ranking del circuito.
+			\pre <em>cierto</em>
+			\post El ranking del circuito ha sido reordenado de forma que aparecen primero los 
+			jugadores con mas puntos y, en caso de empate, los que ocupaban una mejor posicion antes
+			del reordenamiento.
 	*/
 	void reordenar_ranking();
 
 	//Consultoras
 		
-	/** @brief Consultora que permite saber si un jugador ya existe en el conjunto
-	 		\pre <em>p</em> es un identificador válido de un jugador.
-			\post Se devuelve true en caso de que el jugador con identificador <em>p</em>
-			exista en el conjunto, false en caso contrario.
-	*/
-	bool existe_jugador(const string& p) const;
-
-	/**
-	
+	/** @brief Consultora que devuelve el nombre de un jugador del conjunto dada su posicion
+	 		en el ranking.
+			\pre <em>pos</em> es un entero que representa una posicion entre 1 y el numero de jugadores
+			del circuito, ambos incluidos.
+			\post Se devuelve el nombre del jugador que ocupa la posicion <em>p</em> en el ranking.
 	*/
 	string nombre_jugador(int pos) const;
 
@@ -124,7 +140,7 @@ public:
 	/**	@brief Operación de escritura
 			\pre <em>p</em> es un identificador válido de un jugador existente en el conjunto.
 			\post Se devuelve false en caso de que no exista un jugador con identificador
-			<em>p</em>, y en caso contrario, se devuelve true y se ha listado en el canal standard 
+			<em>p</em>, y en caso contrario, se devuelve true y se lista en el canal standard 
 			de salida el nombre, la posición en el ranking, los puntos y el resto de estadísticas 
 			del jugador con identificador <em>p</em>.
 	*/

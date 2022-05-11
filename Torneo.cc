@@ -1,9 +1,5 @@
 #include "Torneo.hh"
 
-//######################################//
-//     MÉTODOS PRIVADOS DE LA CLASE     //
-//######################################//
-
 void Torneo::modificar(BinTree<int>& a, int n, int prod) {
     if ((prod + 1 - a.value()) <= n) {
         BinTree<int> left(a.value());
@@ -13,7 +9,6 @@ void Torneo::modificar(BinTree<int>& a, int n, int prod) {
         a = BinTree<int>(a.value(), left, right);
     }
 }
-
 
 void Torneo::imprimir(const BinTree<int>& a) const {
     BinTree<int> left = a.left();
@@ -46,8 +41,8 @@ void Torneo::imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) con
         int nl = a2.left().value();
         int nr = a2.right().value();
         cout << '(';
-        cout << nl << '.' << edicion_anterior[nl-1].nombre << " vs ";
-        cout << nr << '.' << edicion_anterior[nr-1].nombre << ' ' << a1.value();
+        cout << nl << '.' << inscritos[nl-1].nombre << " vs ";
+        cout << nr << '.' << inscritos[nr-1].nombre << ' ' << a1.value();
         imprimir_res(a1.left(), a2.left());
         imprimir_res(a1.right(), a2.right());
         cout << ')';
@@ -110,10 +105,6 @@ void Torneo::actualizar(const BinTree<string>& a1, BinTree<int>& a2, int n, cons
 }
 
 
-//######################################//
-//     MÉTODOS PÚBLICOS DE LA CLASE     //
-//######################################//
-
 Torneo::Torneo() {}
 
 Torneo::Torneo(int c) {
@@ -126,36 +117,42 @@ void Torneo::generar_enfr() {
 }
 
 
-void Torneo::actualizar_arbol_enf(const Cjt_categorias& c, Cjt_jugadores& j) {
-    int n = edicion_anterior.size();
-    for (int i = 0; i < n; ++i) {
-        j.restar_puntos(edicion_anterior[i].nombre, edicion_anterior[i].puntos);
-    }
+void Torneo::actualizar_arbol_enf(const Cjt_categorias& c) {
     actualizar(resultados, enf, 2, c);
     inscritos[enf.value() - 1].puntos = c.puntos_categoria(categoria, 1);
-    edicion_anterior = inscritos;
 }
 
 void Torneo::restar_edicion_anterior(Cjt_jugadores& j) {
-    if (edicion_anterior.size() > 0) {
-        int n = edicion_anterior.size();
-        for (int i = 0; i < n; ++i) {
-            j.restar_puntos(edicion_anterior[i].nombre, edicion_anterior[i].puntos);
-        }
-        j.reordenar_ranking();
+    map<string,int>::const_iterator it = edicion_anterior.begin();
+    while (it != edicion_anterior.end()) {
+        j.restar_puntos(it->first, it->second);
+        ++it;
     }
+    j.reordenar_ranking();
 }
 
 void Torneo::eliminar_puntos_jug(const string& p) {
-    int n = edicion_anterior.size(), i = 0;
-    bool encontrado = false;
-    while (not encontrado and i < n) {
-        if (edicion_anterior[i].nombre == p) {
-            edicion_anterior[i].puntos = 0;
-            encontrado = true;
-        }
-        ++i;
+    map<string,int>::iterator it = edicion_anterior.find(p);
+    if (it != edicion_anterior.end()) it->second = 0;
+}
+
+void Torneo::actualizar_datos(Cjt_jugadores& j) {
+    map<string,int>::const_iterator it = edicion_anterior.begin();
+    //si el map de edicion_anterior esta vacío, no se hará nada
+    //en caso, contrario, se restan los puntos de la edicion_anterior;
+    while (it != edicion_anterior.end()) {
+        j.restar_puntos(it->first, it->second);
+        ++it;
     }
+    edicion_anterior.clear();
+    //ahora sumo los puntos de la edicion actual (paralelamente se llena el map de edicion_anterior)
+    int n = inscritos.size();
+    for (int i = 0; i < n; ++i) {   
+        j.actualizar_datos(inscritos[i].nombre, inscritos[i].puntos, inscritos[i].juegos_gp, 
+                inscritos[i].sets_gp, inscritos[i].partidos_gp);
+        edicion_anterior.insert(make_pair(inscritos[i].nombre, inscritos[i].puntos));
+    }
+    j.reordenar_ranking();
 }
 
 
@@ -163,28 +160,22 @@ int Torneo::consultar_categoria() const {
     return categoria;
 }
 
-void::Torneo::imprimir_enf() const {
+void Torneo::imprimir_enf() const {
     imprimir(enf);
     cout << endl;
 }
 
-
-void Torneo::imprimir_resultados(Cjt_jugadores& j) const{
+void Torneo::imprimir_resultados() const{
     imprimir_res(resultados, enf);
     cout << endl;
-    int n = edicion_anterior.size();
+    int n = inscritos.size();
     for (int i = 0; i < n; ++i) {
-        j.actualizar_datos(edicion_anterior[i].nombre, edicion_anterior[i].puntos, 
-                edicion_anterior[i].juegos_gp, edicion_anterior[i].sets_gp, 
-                edicion_anterior[i].partidos_gp);
-        if (edicion_anterior[i].puntos > 0) {
-            cout << i + 1 << '.' << edicion_anterior[i].nombre << ' ' << edicion_anterior[i].puntos << endl;  
+        if (inscritos[i].puntos > 0) {
+            cout << i + 1 << '.' << inscritos[i].nombre << ' ' 
+                << inscritos[i].puntos << endl;  
         }
     }
-    j.reordenar_ranking();
 }
-
-void Torneo::listar_puntos() const {}
 
 void Torneo::leer_inscritos(const Cjt_jugadores& j) {
     int n;

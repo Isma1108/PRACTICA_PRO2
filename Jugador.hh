@@ -12,7 +12,7 @@
 using namespace std;
 
 /** @typedef Estadisticas
- 		@brief Pair que identifica las estadisticas de partidos y sets. (ganados-perdidos)
+ 		@brief Pair que identifica las estadisticas de partidos, sets y juegos. (ganados-perdidos)
 */
 typedef pair<int,int> Estadisticas;
 
@@ -39,7 +39,6 @@ public:
 	//Constructoras
 		
 	/** @brief Creadora por defecto
-				
 			Se ejecuta automáticamente al declarar un jugador.
 			\pre <em>cierto</em>
 			\post El resultado es un jugador el cual todos sus atributos son cero. 
@@ -56,99 +55,59 @@ public:
 	//Modificadoras
 
 	/** @brief Modificadora del par que almacena la información de los partidos ganados/perdidos.
-	 		\pre <em>g</em> es un entero que representa los partidos ganados y <em>p</em> los perdidos.
-			\post El parámetro implícito pasa a tener <em>g</em> partidos ganados y <em>p</em> 
-			partidos perdidos.
+	 		\pre <em>pr/em> es un par que tine como primer elemento un entero que representa los 
+			partidos ganados y como segundo elemento uno que representa los perdidos.
+			\post El parámetro implícito pasa a tener los partidos ganados que ya tenia +
+			<em>pr.first()</em> y los perdidos que ya tenia + <em>pr.second()</em>.
 	*/
 	void modificar_partidos(pair<int,int> pr);
 
 	/** @brief Modificadora del par que almacena la información de los sets ganados/perdidos.
-	 		\pre <em>g</em> es un entero que representa los sets ganados y <em>p</em> los perdidos.
-			\post El parámetro implícito pasa a tener <em>g</em> sets ganados y <em>p</em> 
-			sets perdidos.
+	 		\pre <em>s/em> es un par que tine como primer elemento un entero que representa los 
+			sets ganados y como segundo elemento uno que representa los perdidos.
+			\post El parámetro implícito pasa a tener los sets ganados que ya tenia +
+			<em>pr.first()</em> y los perdidos que ya tenia + <em>pr.second()</em>.
 	*/
 	void modificar_sets(pair<int,int> s);
 	
 	/** @brief Modificadora del par que almacena la información de los juegos ganados/perdidos.
-	 		\pre <em>g</em> es un entero que representa los juegos ganados y <em>p</em> los perdidos.
-			\post El parámetro implícito pasa a tener <em>g</em> juegos ganados y <em>p</em> 
-			juegos perdidos.
+	 		\pre <em>j/em> es un par que tine como primer elemento un entero que representa los 
+			juegos ganados y como segundo elemento uno que representa los perdidos.
+			\post El parámetro implícito pasa a tener los juegos ganados que ya tenia +
+			<em>pr.first()</em> y los perdidos que ya tenia + <em>pr.second()</em>.
 	*/
 	void modificar_juegos(pair<int,int> j);
 
 	/** @brief Modificadora del número de torneos disputados.
 	 		\pre <em>cierto</em>
-			\post El número de torneos disputados del parámetro implícito ha aumentado
+			\post El número de torneos disputados del parámetro implícito es aumentado
 			en una unidad.
 	*/
 	void nuevo_td();
 		
 	/** @brief Modificadora de los puntos del jugador.
-			\pre <em>p</em> es un número >= 0
-			\post El parámetro implícito pasa a tener <em>p</em> puntos.
+			\pre <em>p</em> es un entero
+			\post El parámetro implícito pasa a tener los puntos que ya tenia + <em>p</em> puntos.
 		*/
 	void modificar_puntos(int p);
 
 	/** @brief Modificadora de la posicion del jugador.
-			\pre <em>p</em> es un número >= 1 y <= num. jugadores del circuito. 
+			\pre <em>p</em> es un número >= 1 y <= número de jugadores del circuito. 
 			\post El parámetro implícito pasa a tener posición <em>p</em>.
 	*/
 	void modificar_posicion(int p);
 	
 	//Consultoras
-	
-	/** @brief Consultora del número de torneos disputados. 
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de torneos disputados del parámetro implícito.
-	*/
-	int consultar_td() const;
-	
-
-	/** @brief Consultora del número de partidos ganados. 
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de partidos ganados del parámetro implícito.
-	*/
-	int consultar_pg() const;
-	
-	/** @brief Consultora del número de partidos perdidos.
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de partidos perdidos del parámetro implícito.
-	*/
-	int consultar_pp() const;
-
-	/** @brief Consultora del número de sets ganados. 
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de sets ganados del parámetro implícito.
-	*/
-	int consultar_sg() const;
-
-	/** @brief Consultora del número de sets perdidos. 
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de sets perdidos del parámetro implícito.
-	*/
-	int consultar_sp() const;
-	
-	/** @brief Consultora del número de juegos ganados. 
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de juegos ganados del parámetro implícito.
-	*/
-	int consultar_jg() const;
-
-	/** @brief Consultora del número de juegos perdidos. 
-	 		\pre <em>cierto</em>
-			\post El resultado es el número de juegos perdidos del parámetro implícito.
-	*/
-	int consultar_jp() const;
 
 	/** @brief Consultora de la posicion. 
 	 		\pre <em>cierto</em>
-			\post El resultado es el número que hace referencia a la posición del parámetro implícito dentro del ranking.
+			\post Se devuelve la posición del parámetro implícito.
 	*/
 	int consultar_pos() const;
 	
 	/** @brief Consultora de los puntos. 
 	 		\pre <em>cierto</em>
-			\post El resultado es el número que hace referencia a los puntos del parámetro implícito.
+			\post Se devuelven los puntos del parámetro implícito.
 	*/
 	int consultar_puntos() const;
 	

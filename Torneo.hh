@@ -10,6 +10,7 @@
 
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
+#include <map>
 #endif
 
 using namespace std;
@@ -46,12 +47,11 @@ class Torneo
 		//ya que el map de torneos tiene como clave ese nombre.
 		int categoria;
 		vector<Participante> inscritos;
-		vector<Participante> edicion_anterior; 
+		map<string,int> edicion_anterior; 
 		BinTree<int> enf;
 		BinTree<string> resultados;
 	
-		/** @brief Función que confecciona el árbol binario de emparejamientos e imprime 
-		 		estos de forma paralela.
+		/** @brief Función que confecciona el árbol binario de emparejamientos.
 				\pre <em>a</em> es un árbol binario de enteros con un único nodo raíz con valor 1,
 				<em>n</em> es el número de jugadores inscritos en el torneo y <em>prod</em> se trata
 				de un valor que va almacenando potencias de dos en las llamadas recursivas, para 
@@ -61,12 +61,47 @@ class Torneo
 				los emparejamientos iniciales.
 		*/
 		void modificar(BinTree<int>& a, int n, int prod);
+
+		/** @brief Función que se encarga de imprimir los emparejamientos iniciales del torneo.
+		 		\pre <em>a</em> es un árbol binario de enteros el cual sus hojas representan los 
+				emparejamientos iniciales.
+				\post Han sido escritos por el canal standard de salida los emparejamientos iniciales
+				del torneo.
+		*/
 		void imprimir(const BinTree<int>& a) const;
+	
+		/** @brief Función que se encarga de leer los resultados del torneo y almacenar esta 
+		 		información en un árbol binario de strings. 
+				\pre <em>a</em> es un árbol binario de strings y estan disponibles en el canal standard
+				de entrada los resultados del torneo en preorden.
+				\post El árbol binario <em>a</em> ha sido modificado de forma que en todos los nodos hay
+				la información del partido pertinente.
+		*/
 		void lectura_res(BinTree<string>& a);
+
+		/** @brief Función que se encarga de imprimir los resultados del torneo.
+		 		\pre <em>a1</em> es un árbol binario de strings que tiene en sus nodos la información
+				de los partidos pertinentes, y <em>a2</em> es un árbol binario de enteros donde en las
+				hojas hay los jugadores del emparejamiento inicial y en los demas nodos los jugadores
+				que han ganado del partido referente a los dos hijos del nodo.
+				\post Han sido escritos por el canal standard de salida los resultados del torneo.
+		*/
 		void imprimir_res(const BinTree<string>& a1, const BinTree<int>& a2) const; 
-		void actualizar(const BinTree<string>& a1, BinTree<int>& a2, int n, const Cjt_categorias& c);
+		
+		/** @brief Función que devuelve el ganador dado un resultado
+
+		*/
 		int ganador(const string& p) const;
+
+		/** @brief Función que actualiza ciertas caracteristicas de los jugadores del torneo
+				dado un resultado.
+
+		*/
 		void actualizar_est(int left, int right, const string& p);
+
+		/** @brief Función que actualiza el árbol de enteros en base al árbol de resultados.
+		*/
+		void actualizar(const BinTree<string>& a1, BinTree<int>& a2, int n, const Cjt_categorias& c);
 	
 	public:
 		//Constructoras
@@ -94,11 +129,28 @@ class Torneo
 		*/
 		void generar_enfr();
 
-		void actualizar_arbol_enf(const Cjt_categorias& c, Cjt_jugadores& j);
+		/** @brief Función que actualiza el árbol de enfrentamientos en base a los resultados.
+		 
+		*/
+		void actualizar_arbol_enf(const Cjt_categorias& c);
+		
+		/** @brief Función que resta los puntos a todos los jugadores de la edicion anterior.
 
+		*/
 		void restar_edicion_anterior(Cjt_jugadores& j);
+		
+		/** @brief Función que pone los puntos a 0 un jugador, en caso de existir en la 
+		 		edicion anterior.
 
+		*/
 		void eliminar_puntos_jug(const string& p);
+		
+		/** @brief Función que actualiza los datos del conjunto de jugadores del circuito,
+		 		restando los puntos de la edicion anterior y sumando las estadísticas de la edicion
+				vigente.
+
+		*/
+		void actualizar_datos(Cjt_jugadores& j);
 
 		//Consultoras
 		
@@ -123,15 +175,7 @@ class Torneo
 				\post Se ha imprimido por el canal standard de salida el cuadro de
 				resultados, una vez finalizado el torneo.
 		*/
-		void imprimir_resultados(Cjt_jugadores& j) const;
-
-		/** @brief Operación de escritura
-		 		\pre <em>cierto</em>
-				\post Se han listado por el canal standard de salida los puntos para el 
-				ranking ganados por cada uno de los participantes, por orden del ranking
-				de los jugadores en el momento de iniciar el torneo. 
-		*/
-		void listar_puntos() const;
+		void imprimir_resultados() const;
 
 		//Lectura
 

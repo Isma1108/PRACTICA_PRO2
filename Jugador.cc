@@ -1,6 +1,12 @@
 #include "Jugador.hh"
 
-Jugador::Jugador() {}
+Jugador::Jugador() {
+    posicion = 0;
+    torneos_disputados = puntos = 0;
+    partidos.first = partidos.second = 0;
+    sets.first = sets.second = 0;
+    juegos.first = juegos.second = 0;
+}
 
 Jugador::Jugador(int p) {
     posicion = p;
@@ -9,7 +15,6 @@ Jugador::Jugador(int p) {
     sets.first = sets.second = 0;
     juegos.first = juegos.second = 0;
 }
-
 
 void Jugador::modificar_partidos(pair<int,int> pr) {
     partidos.first += pr.first;
@@ -37,19 +42,6 @@ void Jugador::modificar_puntos(int p) {
 void Jugador::modificar_posicion(int p) {
     posicion = p;
 }
-//int Jugador::consultar_td() const {}
-
-//int Jugador::consultar_pg() const {}
-
-//int Jugador::consultar_pp() const {}
-
-//int Jugador::consultar_sg() const {}
-
-//int Jugador::consultar_sp() const {}
-
-//int Jugador::consultar_jg() const {}
-
-//int Jugador::consultar_jp() const {}
 
 int Jugador::consultar_pos() const {
     return posicion;

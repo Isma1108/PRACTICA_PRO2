@@ -1,9 +1,6 @@
 #include "Cjt_jugadores.hh"
 #include <algorithm>
 
-typedef map<string,Jugador>::iterator map_it;
-
-
 bool Cjt_jugadores::comp(const map_it& a, const map_it& b) {
     int n1 = a->second.consultar_puntos();
     int n2 = b->second.consultar_puntos();
@@ -13,7 +10,9 @@ bool Cjt_jugadores::comp(const map_it& a, const map_it& b) {
     return a->second.consultar_pos() < b->second.consultar_pos();
 }
 
-Cjt_jugadores::Cjt_jugadores() {}
+Cjt_jugadores::Cjt_jugadores() {
+    P = 0;
+}
 
 bool Cjt_jugadores::nuevo_jugador(const string& p) {
     pair<map_it,bool> ret = jugadores.insert(make_pair(p, Jugador(P+1)));
@@ -30,8 +29,9 @@ bool Cjt_jugadores::baja_jugador(const string& p) {
     map_it it = jugadores.find(p); //búsqueda con coste logn
     if (it == jugadores.end()) return false;
     else {
-        int pos = it->second.consultar_pos(); //coste constante para acceder al vector;
+        int pos = it->second.consultar_pos();
         jugadores.erase(it);
+    
         //ahora hay que eliminar el jugador del ranking
         for (int i = pos; i < P; ++i) {
             ranking[i]->second.modificar_posicion(i);
@@ -49,7 +49,8 @@ void Cjt_jugadores::restar_puntos(const string& p, int n) {
     if (it != jugadores.end()) it->second.modificar_puntos(n*(-1));
 }
 
-void Cjt_jugadores::actualizar_datos(const string& p, int pts, pair<int,int> j, pair<int,int> s, pair<int,int> pr) {
+void Cjt_jugadores::actualizar_datos(const string& p, int pts, pair<int,int> j, 
+        pair<int,int> s, pair<int,int> pr) {
     map_it it = jugadores.find(p);
     it->second.modificar_puntos(pts);
     it->second.modificar_juegos(j);
@@ -64,11 +65,6 @@ void Cjt_jugadores::reordenar_ranking() {
     for (int i = 0; i < n; ++i) {
         ranking[i]->second.modificar_posicion(i+1);
     }
-}
-
-bool Cjt_jugadores::existe_jugador(const string& p) const {
-    if (jugadores.find(p) == jugadores.end()) return false;
-    else return true;
 }
 
 string Cjt_jugadores::nombre_jugador(int pos) const {

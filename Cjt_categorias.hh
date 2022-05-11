@@ -39,14 +39,14 @@ class Cjt_categorias
 {
 private:
 	vector<Categoria> categorias;
-	int K; //(máximo de niveles)
+	int K; //(máximo de niveles, >= 4)
 
 public:
 	//Constructoras
 	
 	/** @brief Creadora por defecto
 	   	\pre <em>cierto</em>
-			\post El resultado es un Cjt_categorias con su vector de Categoria
+			\post El resultado es un Cjt_categorias con su vector de Categorias
 			no definido.
 	*/
 	Cjt_categorias();
@@ -60,7 +60,7 @@ public:
 	*/
 	bool existe_categoria(int c) const;
 
-	/** @brief Consultora que permite saber los puntos que debe un jugador que ha 
+	/** @brief Consultora que permite saber los puntos que debe ganar un jugador que ha 
 	    participado en un torneo de categoria <em>c</em> y que ha llegado a un
 			nivel <em>k</em>.
 			\pre <em>c</em> es un identificador de una categoria existente en el conjunto
@@ -70,9 +70,9 @@ public:
 	*/
 	int puntos_categoria(int c, int k) const;
 
-	/**
-	 
-
+	/** @brief Consultora que devuelve el nombre de una categoria dado su identificador numérico.
+	 		\pre <em>c</em> es un entero >= 1 y <= número de categorias
+			\pre se devuelve el nombre asociado a la categorias con identificador numérico <em>c</em>.
 	*/
 	string consultar_nombre(int c) const;
 	
