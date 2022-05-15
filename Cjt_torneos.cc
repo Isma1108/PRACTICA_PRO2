@@ -1,10 +1,12 @@
 #include "Cjt_torneos.hh"
 
-Cjt_torneos::Cjt_torneos() {
+Cjt_torneos::Cjt_torneos() 
+{
     T = 0;
 }
 
-bool Cjt_torneos::nuevo_torneo(const string& t, int c) {
+bool Cjt_torneos::nuevo_torneo(const string& t, int c) 
+{
     pair<torneos_it,bool> ret = torneos.insert(make_pair(t, Torneo(c)));
     if (ret.second == false) return false;
     else {
@@ -14,7 +16,8 @@ bool Cjt_torneos::nuevo_torneo(const string& t, int c) {
     }
 }
 
-bool Cjt_torneos::baja_torneo(const string& t, Cjt_jugadores& j) {
+bool Cjt_torneos::baja_torneo(const string& t, Cjt_jugadores& j) 
+{
     torneos_it it = torneos.find(t); //búsqueda con coste logn
     if (it == torneos.end()) return false;
     else {
@@ -26,14 +29,16 @@ bool Cjt_torneos::baja_torneo(const string& t, Cjt_jugadores& j) {
     }
 }
 
-void Cjt_torneos::iniciar_torneo(const string& t, const Cjt_jugadores& j) {
+void Cjt_torneos::iniciar_torneo(const string& t, const Cjt_jugadores& j) 
+{
     torneos_it it = torneos.find(t);
     it->second.leer_inscritos(j);
     it->second.generar_enfr();
     it->second.imprimir_enf();
 }
 
-void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_categorias& c) {
+void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_categorias& c) 
+{
     torneos_it it = torneos.find(t);
     it->second.leer_resultados();
     it->second.actualizar_arbol_enf(c);
@@ -41,7 +46,8 @@ void Cjt_torneos::finalizar_torneo(const string& t, Cjt_jugadores& j, const Cjt_
     it->second.imprimir_resultados();
 }
 
-void Cjt_torneos::eliminar_puntos(const string& p) {
+void Cjt_torneos::eliminar_puntos(const string& p) 
+{
     torneos_it it = torneos.begin();
     while (it != torneos.end()) {
         it->second.eliminar_puntos_jug(p);      
@@ -49,7 +55,8 @@ void Cjt_torneos::eliminar_puntos(const string& p) {
     }
 }
 
-void Cjt_torneos::listar_torneos(const Cjt_categorias& c) const {
+void Cjt_torneos::listar_torneos(const Cjt_categorias& c) const 
+{
     cout << T << endl;
     map<string,Torneo>::const_iterator it = torneos.begin();
     while (it != torneos.end()) {
@@ -59,7 +66,8 @@ void Cjt_torneos::listar_torneos(const Cjt_categorias& c) const {
     }
 }
 
-void Cjt_torneos::lectura_inicial() {
+void Cjt_torneos::lectura_inicial() 
+{
     //no es necesario especificar un orden para el map de torneos, ya que el orden
     //por defecto es creciente para el valor de la llave.
     int t;

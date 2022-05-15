@@ -1,6 +1,6 @@
 /** @mainpage Circuito de Torneos de Tenis.
 
-El programa principal se encuentra en el módulo <em>main.cc</em>.
+El programa principal se encuentra en el módulo <em>program.cc</em>.
 En base a los datos proporcionados por el enunciado, se ha considerado necesaria la existencia de exactamente 5 clases:
 <ul>
 	<li>Jugador</li>

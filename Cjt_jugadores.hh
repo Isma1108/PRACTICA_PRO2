@@ -26,15 +26,19 @@ typedef map<string,Jugador>::iterator map_it;
 		La clase tiene el propósito de gestionar un conjunto de jugadores. Ésta permite
 		añadir y dar de baja jugadores, así como listarlos, ya sea en conjunto o de forma
 		individual. Además almacena en un ranking a los jugadores en función de sus puntos
-		y permite listar a los jugadores en función de su ranking.
+		y permite listar a los jugadores en función de su posición en el ranking.
 */
 
 class Cjt_jugadores
 {
 private:
-	int P; //numero total de jugadores
-	map<string,Jugador> jugadores;
-	vector<map_it> ranking;
+	int P; //!< Número total de jugadores del circuito.
+	map<string,Jugador> jugadores; //!< Map que almacena a los jugadores del circuito en orden lexicográfico.
+
+	/** @brief Vector de iteradores que apuntan a los jugadores del 
+	 		circuito siguiendo un orden basado en us puntos, funcionando como un ranking.
+	*/
+	vector<map_it> ranking; 
 
 	/** @brief Función booleana estática que se usa para ordenar el vector de iteradores 
 	 		<em>ranking</em>.
@@ -52,7 +56,7 @@ public:
 	 		\pre <em>cierto</em>
 			\post El resultado es un Cjt_jugadores con el numero total de jugadores a 0
 			y las estructuras que se encargan de almacenar los datos de los jugadores se 
-			encuentran vacías, sin elementos.
+			encuentran vacías.
 	*/
 	Cjt_jugadores();
 	
@@ -105,7 +109,7 @@ public:
 	 		que representa el ranking del circuito.
 			\pre <em>cierto</em>
 			\post El ranking del circuito ha sido reordenado de forma que aparecen primero los 
-			jugadores con mas puntos y, en caso de empate, los que ocupaban una mejor posicion antes
+			jugadores con mas puntos y, en caso de empate, los que ocupaban una mejor posición antes
 			del reordenamiento.
 	*/
 	void reordenar_ranking();

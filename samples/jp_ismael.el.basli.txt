@@ -1,0 +1,380 @@
+﻿Juego de pruebas Ismael El Basli
+
+#############################
+### INPUT AMB COMENTARIS ####
+#############################
+
+//Lectura inicial, inicialización de los conjuntos
+6 8
+Masters_gods
+ATP_dummies
+Grand_dijkstra
+Poverty_tour
+Unique_winner
+Grand_bfs
+
+4000 2450 840 450 240 120 70 0
+ 500  400 300 200 100  50  0 0
+2400 1200 650 330 200  96 10 0
+   8    7   6   5   4   3  2 1
+1000    0   0   0   0   0  0 0
+ 950  400  20   0   0   0  0 0
+
+5
+Wimbleduck 6
+FIB_bacarras 5
+Girona 1
+Costa_brava 3
+UPC_campus_nord 2
+
+130
+Djokovic
+Nadal
+Thiem
+Medvedev
+Federer
+Elba-Surero
+Tsitsipas
+Zverev
+Rublev
+Schwartzman
+Berrettini
+Monfils
+Elon-Musk
+Shapovalov
+Bautista
+Alcaraz
+Raonic
+Goffin
+Carreño
+Fognini
+Wawrinka
+Dimitrov
+Khachanov
+Euler
+Penrose
+Auger-Aliassime
+Garin
+Miñaur
+Coric
+Isner
+Lajovic
+Ruud
+Paire
+Fritz
+Humbert
+Descartes
+Newton
+Krajinovic
+Evans
+Sonego
+Hurkacz
+Mannarino
+Struff
+Sinner
+Millman
+Opelka
+Basilashvili
+Nishikori
+Cilic
+Pella
+Kecmanovic
+Kyrgios
+Alan-Turing
+Ramos-Vinolas
+Gasquet
+Edmund
+Sandgren
+Bublik
+Thompson
+Davidovich-Fokina
+Querrey
+Paul
+Fucsovics
+Nishioka
+Djere
+Bedene
+Tiafoe
+Andújar
+Pospisil
+Sultan
+Simon
+López
+Verdasco
+Koepfer
+Cuevas
+Vesely
+Berankis
+Pouille
+Norrie
+Tsonga
+Simon
+López
+Verdasco
+Koepfer
+Cuevas
+Vesely
+Raul
+Pouille
+Johnson
+Giron
+Travaglia
+Chardy
+Caruso
+Moutet
+Gerasimov
+Ignacio-Londero
+Cecchinato
+Anderson
+Delbonis
+Herbert
+Hilbert
+Monteiro
+Gauss
+Taylor
+Martínez-Portero
+Jamal
+Ruusuvuori
+Harris
+Gombos
+Kukushkin
+Sousa
+Coria
+Balazs
+Albot
+Ymer
+Woo-Kwon
+Novak
+Kohlschreiber
+Hanfmann
+Mager
+Martin
+Leibniz
+Euclides
+Riemann
+El-Basli
+Edberg
+Becker
+Josep
+Albert-Bach
+Octavio
+
+listar_categorias
+listar_torneos
+lr
+lj
+
+it Girona
+32
+ 10 20 30 40 41 42 43 47 48 50 52 53 56 58 59 60 68 69 70 77 79 80 81 88 90 92  94 95 101 102 115 117
+
+nuevo_torneo Salomon 7
+nt Maldivas 4
+lt
+nj Euler
+
+finalizar_torneo Girona
+4-6,6-3,4-6
+6-3,7-6
+6-2,6-4
+6-3,6-1
+6-0,6-1
+0 0
+5-7,3-6
+0 0
+6-3,6-7,6-7
+6-4,6-4
+0 0
+6-7,6-2,6-2
+0 0
+3-6,6-4,7-5
+7-5,7-5
+6-1,6-2
+0 0
+5-7,3-6
+0 0
+7-5,3-6,6-3
+4-6,5-7
+0 0
+5-7,3-6
+0 0
+7-6,7-6
+6-3,3-6,6-3
+1-0
+6-2,6-4
+0 0
+0-1
+0 0
+6-7,6-4,5-7
+6-1,6-1
+0 0
+5-7,3-6
+0 0
+5-7,6-3,6-0
+6-4,7-6
+6-0,6-1
+0 0
+6-4,5-7,3-6
+0 0
+6-3,6-4
+0-1
+0 0
+6-4,6-1
+0 0
+
+lr
+lj
+
+it Girona
+14
+  88 89 90 95 104 105 106 110 114 120 121 122 127 128
+
+bj Schwartzman
+bj Fognini
+
+nj Schwartzman
+
+ft Girona
+7-6,3-6,6-4
+6-2,6-4
+6-4,6-4
+0
+6-4,4-6,4-6
+0 0
+1-6,6-2,3-6
+6-1,6-3
+0 0
+7-5,7-6
+0 0
+7-6,4-6,6-7
+5-7,5-7
+0
+6-3,6-7,7-5
+0 0
+5-7,6-3,6-0
+6-4,7-6
+0 0
+1-0
+0 0
+
+lr
+lj
+ 
+it FIB_bacarras
+28
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 16 17 18 19 22 25 29 31 33 34 36 42 58 60
+
+it UPC_campus_nord
+28
+ 72 74 77 78 80 83 84 86 87 88 90 92 93 94 96 97 99 100 101 103 104 105 107 108
+ 109 110 111 112
+
+ft FIB_bacarras
+3-6,6-4,7-6
+7-5,3-6,3-6
+6-4,6-4
+6-1,6-0
+0
+5-7,6-4,6-1
+0 0
+6-3,6-3
+1-6,6-4,2-6
+0 0
+6-7,4-6
+0 0
+6-2,6-3
+3-6,6-2,5-7
+0
+6-1,6-1
+0 0
+7-5,6-3
+4-6,6-7
+0 0
+1-0
+0 0
+6-2,7-5
+6-3,6-3
+6-4,6-1
+0
+6-3,4-6,6-4
+0 0
+7-6,7-6
+6-0,6-2
+0 0
+3-6,2-6
+0 0
+4-6,7-5,6-3
+6-4,6-4
+0
+6-2,7-6
+0 0
+0-1
+6-1,6-4
+0 0
+5-7,3-6
+0 0
+
+lj
+lr
+
+
+bt FIB_bacarras
+lj
+lr
+bt Fake_tournament
+
+
+ft UPC_campus_nord
+3-6,6-4,7-6
+7-5,3-6,3-6
+6-4,6-4
+6-1,6-0
+0
+5-7,6-4,6-1
+0 0
+6-3,6-3
+1-6,6-4,2-6
+0 0
+6-7,4-6
+0 0
+6-2,6-3
+3-6,6-2,5-7
+0
+6-1,6-1
+0 0
+7-5,6-3
+4-6,6-7
+0 0
+1-0
+0 0
+6-2,7-5
+6-3,6-3
+6-4,6-1
+0
+6-3,4-6,6-4
+0 0
+7-6,7-6
+6-0,6-2
+0 0
+3-6,2-6
+0 0
+4-6,7-5,6-3
+6-4,6-4
+0
+6-2,7-6
+0 0
+0-1
+6-1,6-4
+0 0
+5-7,3-6
+0 0
+
+lr
+
+
+
+
+
+
+
+

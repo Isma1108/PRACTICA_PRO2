@@ -12,7 +12,7 @@
 using namespace std;
 
 /** @typedef Estadisticas
- 		@brief Pair que identifica las estadisticas de partidos, sets y juegos. (ganados-perdidos)
+ 		@brief Pair que identifica las estadisticas de partidos, de sets y de juegos. (ganados-perdidos)
 */
 typedef pair<int,int> Estadisticas;
 
@@ -26,14 +26,14 @@ typedef pair<int,int> Estadisticas;
 class Jugador 
 {
 private:
-	//no es necesario guardar el nombre del jugador como atributo
-	//ya que el map de jugadores tiene como clave ese nombre
-	int torneos_disputados;
-	int posicion;
-	int puntos;
-	Estadisticas partidos; //Par de partidos ganados y perdidos
-	Estadisticas sets; //Par de sets ganados y perdidos
-	Estadisticas juegos; //Par de juegos ganados y perdidos
+	//No es necesario guardar el nombre del jugador como atributo
+	//ya que el map de jugadores tiene como llave ese nombre.
+	int torneos_disputados; //!< Número de torneos disputados del jugador.
+	int posicion; //!< Posición del jugador en el ranking. 
+	int puntos; //!< Número total de puntos del jugador.
+	Estadisticas partidos; //!< Par de partidos ganados y perdidos.
+	Estadisticas sets; //!< Par de sets ganados y perdidos.
+	Estadisticas juegos; //!< Par de juegos ganados y perdidos.
 
 public:
 	//Constructoras
@@ -41,7 +41,7 @@ public:
 	/** @brief Creadora por defecto
 			Se ejecuta automáticamente al declarar un jugador.
 			\pre <em>cierto</em>
-			\post El resultado es un jugador el cual todos sus atributos son cero. 
+			\post El resultado es un jugador el cual todos sus atributos no estan inicializados. 
 	*/
 	Jugador();
 	
@@ -66,7 +66,7 @@ public:
 	 		\pre <em>s/em> es un par que tine como primer elemento un entero que representa los 
 			sets ganados y como segundo elemento uno que representa los perdidos.
 			\post El parámetro implícito pasa a tener los sets ganados que ya tenia +
-			<em>pr.first()</em> y los perdidos que ya tenia + <em>pr.second()</em>.
+			<em>s.first()</em> y los perdidos que ya tenia + <em>s.second()</em>.
 	*/
 	void modificar_sets(pair<int,int> s);
 	
@@ -74,7 +74,7 @@ public:
 	 		\pre <em>j/em> es un par que tine como primer elemento un entero que representa los 
 			juegos ganados y como segundo elemento uno que representa los perdidos.
 			\post El parámetro implícito pasa a tener los juegos ganados que ya tenia +
-			<em>pr.first()</em> y los perdidos que ya tenia + <em>pr.second()</em>.
+			<em>j.first()</em> y los perdidos que ya tenia + <em>j.second()</em>.
 	*/
 	void modificar_juegos(pair<int,int> j);
 
@@ -101,7 +101,7 @@ public:
 
 	/** @brief Consultora de la posicion. 
 	 		\pre <em>cierto</em>
-			\post Se devuelve la posición del parámetro implícito.
+			\post Se devuelve la posición del parámetro implícito dentro del ranking.
 	*/
 	int consultar_pos() const;
 	

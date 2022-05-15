@@ -2,20 +2,24 @@
 
 Cjt_categorias::Cjt_categorias() {}
 
-bool Cjt_categorias::existe_categoria(int c) const {
+bool Cjt_categorias::existe_categoria(int c) const 
+{
     if (c >= 1 and c <= categorias.size()) return true;
     else return false;
 }
 
-int Cjt_categorias::puntos_categoria(int c, int k) const {
+int Cjt_categorias::puntos_categoria(int c, int k) const 
+{
     return categorias[c - 1].puntuacion_por_nivel[k - 1];
 }
 
-string Cjt_categorias::consultar_nombre(int c) const {
+string Cjt_categorias::consultar_nombre(int c) const 
+{
     return categorias[c-1].nombre;
 }
 
-void Cjt_categorias::listar_categorias() const {
+void Cjt_categorias::listar_categorias() const 
+{
     int n = categorias.size();
     cout << n << ' ' << K << endl; 
     
@@ -26,7 +30,8 @@ void Cjt_categorias::listar_categorias() const {
     }
 }
 
-void Cjt_categorias::lectura_inicial() {
+void Cjt_categorias::lectura_inicial() 
+{
     int c, k;
     cin >> c >> k;
     K = k;

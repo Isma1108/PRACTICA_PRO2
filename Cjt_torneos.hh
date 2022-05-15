@@ -6,8 +6,6 @@
 #define CJT_TORNEOS_HH
 
 #include "Torneo.hh"
-#include "Cjt_jugadores.hh"
-#include "Cjt_categorias.hh"
 
 #ifndef NO_DIAGRAM
 #include <map>

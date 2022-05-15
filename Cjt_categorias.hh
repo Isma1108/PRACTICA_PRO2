@@ -24,7 +24,12 @@ using namespace std;
 */
 
 struct Categoria {
-	string nombre;
+	string nombre; //!< Nombre de la categoria.
+
+	/** @brief Vector de enteros que contiene la información de los puntos
+	 		que ganaria un jugador en un torneo de categoria c al llegar a un nivel k,
+			siendo k un índice de este vector.
+	*/
 	vector<int> puntuacion_por_nivel;
 };
 
@@ -32,14 +37,17 @@ struct Categoria {
     @brief Facilita la gestión de un conjunto de categorias. (obj. 'Categoria')
 
 		La clase tiene el propósito de gestionar un conjunto de categorias. Ésta permite
-
+		principalmente poder saber cuántos puntos deberia ganar un jugador que ha llegado
+		a un cierto nivel en un torneo de determinada categoria. Además permite listar,  
+		por orden creciente de identificador, el nombre y la tabla de puntos por niveles 
+		(en orden creciente de nivel) de cada categoría del circuito.
 */
 
 class Cjt_categorias
 {
 private:
-	vector<Categoria> categorias;
-	int K; //(máximo de niveles, >= 4)
+	vector<Categoria> categorias; //!< Vector que almacena un conjunto de categorias.
+	int K; //!< Número máximo de niveles 
 
 public:
 	//Constructoras
