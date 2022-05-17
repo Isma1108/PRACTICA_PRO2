@@ -137,11 +137,13 @@ void Torneo::actualizar_arbol_enf(const Cjt_categorias& c)
 void Torneo::restar_edicion_anterior(Cjt_jugadores& j) 
 {
     map<string,int>::const_iterator it = edicion_anterior.begin();
+    bool restado = true;
+    if (it == edicion_anterior.end()) restado = false;
     while (it != edicion_anterior.end()) {
         j.restar_puntos(it->first, it->second);
         ++it;
     }
-    j.reordenar_ranking();
+    if (restado) j.reordenar_ranking();
 }
 
 void Torneo::eliminar_puntos_jug(const string& p) 

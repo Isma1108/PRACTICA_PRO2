@@ -22,7 +22,7 @@ program.o: program.cc Cjt_jugadores.hh Cjt_categorias.hh Cjt_torneos.hh
 	g++ -c program.cc $(OPCIONS) 
 
 practica.tar: *.hh *.cc Makefile 
-	tar -cvf practica.tar *.hh *.cc Makefile 
+	tar -cvf practica.tar *.hh *.cc *.zip Makefile 
 
 clean:
 	rm *.o
